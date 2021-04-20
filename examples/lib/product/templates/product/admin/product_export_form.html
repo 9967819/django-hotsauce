@@ -1,0 +1,134 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_modify %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/forms.css" />
+<style type="text/css">
+form#inventoryform input.text {
+    width: 6em;
+}
+
+tr.ConfigurableProduct {
+    font-style: italic;
+}
+</style>
+{% endblock %}
+{% block extrahead %}{{ block.super }}
+    <script src="{{media_url}}js/jquery.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var satchmo = satchmo || {};
+    satchmo.toggle = function(cls, state) {
+        $(cls).each(function() { this.checked = state });
+       return false;
+    };
+
+    $(function() {
+        var c = $.cookie("satchmoadmin_exportformat");
+        if (c) {
+            $('#id_format')[0].value=c;
+        }
+  
+        $('#id_format').change(function() {
+            var fmt = $('#id_format')[0].value
+            $.cookie("satchmoadmin_exportformat", fmt, {expires: 7});
+        });
+        $('#mark_all').click(function() {
+            satchmo.toggle('input.export', true);
+        });
+        $('#unmark_all').click(function() {
+            satchmo.toggle('input.export', false);
+        });
+    });
+    </script>
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+{% block bodyclass %}dashboard{% endblock %}
+{% block userlinks %}<a href="/admin/doc/">{% trans 'Documentation' %}</a> / <a href="/admin/password_change/">{% trans 'Change password' %}</a> / <a href="/admin/logout/">{% trans 'Log out' %}</a>{% endblock %}
+{% block breadcrumbs %}{% if not is_popup %}
+<div class="breadcrumbs">
+     <a href="/admin/">{% trans "Home" %}</a> &rsaquo;
+     {% trans "Inventory Management" %}
+</div>
+{% endif %}{% endblock %}
+{% block content %}
+<div id="content-main">
+{% if importform.errors %}
+    <p class="errornote">
+    {% blocktrans count importform.errors|length as counter %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+{% endif %}
+{% if importform.fields %}
+<fieldset class="module">
+<h2>Import</h2>
+<form method="post" id="importform" action="{% url product_import %}" enctype="multipart/form-data">
+    <p>{% trans 'Import from fixture file:' %}{{ importform.upload }}</p>
+    <input type="submit" value="{%trans 'Import' %}" class="default" />
+</form>
+</fieldset>
+{% endif %}
+{% if form.errors %}
+    <p class="errornote">
+    {% blocktrans count form.errors|length as counter %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+    </p>
+{% endif %}
+<fieldset class="module">
+<h2>Export</h2>
+{% if form.fields %}
+<form method="post" id="productform">
+    <table width="100%">
+        <thead>
+            <th>{% trans 'Name' %}</th>
+            <th>{% trans 'Slug' %}</th>
+            <th>{% trans 'Export' %}</th>
+        </thead>
+    <tbody>
+    {% for field in form %}
+        {% ifnotequal field.name 'format' %} 
+            {% if field.is_hidden %}
+                <tr>{{ field }}</tr>
+            {% else %}
+                {% ifchanged field.field.slug %}
+                    {% if not forloop.first %}
+            		{% endif %}
+                    <tr class="{{ field.field.subtypes }}">
+                        
+                        <td>{{ field.help_text}}</td>
+
+                        
+                        <td><a href="/admin/product/product/{{ field.field.product_id }}/">{{ field.label_tag }}</a>
+                            {% if field.errors %}
+                    		<span class="error">{{ field.errors }}</span><br/>
+            		        {% endif %}    
+                        </td>
+
+                        <td>{{ field }}</td>
+
+                     </tr>   
+                {% endifchanged %}
+        	{% endif %}
+    	{% endifnotequal %}
+    {% endfor %}
+   	</tbody>
+    </table>
+
+<p>{% trans 'Include images?' %} {{ form.include_images }}</p>
+<p>{% trans 'Include categories?' %} {{ form.include_categories }}</p>
+<p>{% trans 'Format?' %}{{ form.format }}</p>
+<p><a href="#" id="mark_all">{% trans 'Check all' %}</p>
+<p><a href="#" id="unmark_all">{% trans 'Uncheck all' %}</p>
+
+<input type="submit" value="{% trans 'Export' %}" class="default" />
+<input type="reset" value="{% trans 'Reset' %}" class="default" />
+
+
+
+
+</form>
+</fieldset>
+
+{% else %}
+    <p>{% trans "No products." %}</p>
+{% endif %}
+</div>
+{% endblock %}

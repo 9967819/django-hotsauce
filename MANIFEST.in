@@ -1,0 +1,31 @@
+global-include README README.* BUGS TODO CHANGES
+global-include Makefile LICENSE INSTALL AUTHORS NEWS Doxyfile
+global-include *.ini *.sample 
+global-include admin/*
+global-include admin/static/*
+#global-exclude *.orig 
+
+global-exclude push_changes.*
+global-exclude bin/*
+global-exclude dist/*
+
+include ez_setup.py PKG-INFO.in setup.cfg bootstrap djangorc.sample
+
+recursive-include tests *.py *.mako *.sample *.yaml
+recursive-include examples *.py *.mako
+#recursive-include docs *.txt *.rst *.wiki *.patch
+#recursive-include docs *.html *.css *.js *.gif *.png *.dot
+
+recursive-include lib *.py *.pyx *.pxd
+recursive-include tools *
+recursive-include extras *
+#recursive-include artwork *.png
+#recursive-include debian *
+#recursive-include plugins *.py *.mako 
+
+prune tests/unstable
+prune plugins/build
+prune *.egg-info
+
+# XXX dont include subversion private directories
+global-exclude .hg/* 

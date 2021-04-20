@@ -1,0 +1,85 @@
+This file explains the needed steps to make a release:
+
+1. Change version number in gazpacho/__init__.py
+
+2. Ensure it is a good release
+
+   2.1 Run pyflakes and pylint on the whole code base:
+
+       pyflakes gazpacho
+       tools/pylint.sh gazpacho
+
+   2.2 Run all the tests and make sure they all work
+
+       trial -t tests
+
+   2.3 Install gazpacho using --prefix, ensure it works properly:
+
+       tools/make-release.sh
+
+   2.4 Install on windows, ensure it works
+
+3. Update translations:
+
+   kiwi-i18n -u -c
+
+4. Update NEWS
+
+5. Write a Changelog entry so we know there was a release here.
+   Add === gazpacho X.Y.Z === in top of th ChangeLog
+
+6. Commit these changes
+
+7. Tag svn:
+
+  svn copy svn+ssh://lgs@svn.gnome.org/svn/gazpacho/trunk \
+           svn+ssh://lgs@svn.gnome.org/svn/gazpacho/tags/X.Y.Z
+
+8. Build tarballs:
+
+   tools/make-release.sh
+
+9. Upload tarballs:
+
+  tools/upload.sh
+
+10. Send an email to gazpacho@sicem.biz, pygtk@daa.com.au,
+    gnome-announce-list@gnome.org
+
+11. Update some websites: gnome files, pygtk.org and gazpacho.sicem.biz
+
+Template for the mail:
+
+Subject: ANNOUNCE: Gazpacho X.Y.Z
+
+Hi everybody,
+
+I'm happy to announce the X.Y.Z version of Gazpacho. In this release
+some parts of the core have been rewritten and many many bugs have been
+fixed.
+
+...
+
+Description
+===========
+Gazpacho is a PyGTK application that let you design the Graphical User
+Interface of your GTK+ programs.
+
+Enhancements and fixes
+======================
+...
+
+Links
+=====
+
+home   http://gazpacho.sicem.biz
+files  http://ftp.gnome.org/pub/GNOME/sources/gazpacho/
+list   http://www.sicem.biz/mailman/listinfo/gazpacho
+source http://www.sicem.biz/viewsvn/gazpacho/
+bugs   http://bugzilla.gnome.org
+
+index  http://www.gnomefiles.org/app.php?soft_id=646
+
+-- 
+Lorenzo Gil Sanchez <lgs@sicem.biz>
+

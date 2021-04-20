@@ -1,0 +1,41 @@
+from pkg_resources import resource_filename
+from helloworld.config.settings import *
+
+MEDIA_ROOT = resource_filename('helloworld', 'static')
+
+DEBUG = True
+USE_I18N = True
+LANGUAGE_CODE = 'fr-CA'
+
+DEFAULT_CHARSET = 'utf-8'
+DEFAULT_CONTENT_TYPE = 'text/html; charset=%s' % DEFAULT_CHARSET
+
+# Custom error handlers mapping
+CUSTOM_ERROR_HANDLERS = (
+    ('handle404', 'helloworld.handlers.handle404'),
+    ('handle500', 'helloworld.handlers.handle500'),
+    ('handle302', 'helloworld.handlers.handle302')
+    )
+
+# List of processors used by RequestContext to populate the context.
+# Each one should be a callable that takes the request object as its
+# only parameter and returns a dictionary to add to the context.
+TEMPLATE_CONTEXT_PROCESSORS = ()
+
+# For backward-compatibility with Django
+TEMPLATE_DIRS = (
+    (resource_filename('helloworld', 'templates')),
+)
+
+#DATABASE_ENGINE = 'sqlite3'
+#DATABASE_NAME = 'sqlite:///fixtures/test.db'
+
+ROOT_URLCONF = 'helloworld.config.urls'
+
+# Logging options
+LOGGING_FORMAT = '[%(levelname)-5s] - [%(asctime)-15s] - [%(name)-5s] - %(message)s' 
+# Where to send application errors 
+LOGGING_ERROR_LOG = '/var/log/python.log'
+
+MIDDLEWARE_CLASSES = ()
+

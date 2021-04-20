@@ -1,0 +1,4 @@
+<!-- dummy glade file to workaround distutils stupidness 
+     this file can be removed as soon as we have som real glade files here
+  -->
+<glade-interface/>

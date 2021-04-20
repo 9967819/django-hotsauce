@@ -1,0 +1,817 @@
+- fields: {site: 1, description: '', name: sizes, sort_order: !!python/long '1'}
+  model: product.optiongroup
+  pk: '1'
+- fields: {site: 1, description: '', name: Book type, sort_order: !!python/long '1'}
+  model: product.optiongroup
+  pk: '3'
+- fields: {site: 1, description: '', name: colors, sort_order: !!python/long '2'}
+  model: product.optiongroup
+  pk: '2'
+- fields: {site: 1, description: '', name: Full/Upgrade, sort_order: !!python/long '5'}
+  model: product.optiongroup
+  pk: '4'
+- fields: {site: 1, description: Internal RAM, name: Memory, sort_order: 2}
+  model: product.optiongroup
+  pk: 5
+- fields: {site: 1, description: External Case, name: Case, sort_order: 3}
+  model: product.optiongroup
+  pk: 6
+- fields: {sort_order: !!python/long '1', name: Small, option_group: !!python/long '1',
+    price_change: null, value: S}
+  model: product.option
+  pk: '1'
+- fields: {sort_order: !!python/long '2', name: Medium, option_group: !!python/long '1',
+    price_change: null, value: M}
+  model: product.option
+  pk: '2'
+- fields:
+    sort_order: !!python/long '3'
+    name: Large
+    option_group: !!python/long '1'
+    price_change: !!python/object/apply:decimal.Decimal ['1.00']
+    value: L
+  model: product.option
+  pk: '3'
+- fields: {sort_order: !!python/long '1', name: Black, option_group: !!python/long '2',
+    price_change: null, value: B}
+  model: product.option
+  pk: '4'
+- fields: {sort_order: !!python/long '2', name: White, option_group: !!python/long '2',
+    price_change: null, value: W}
+  model: product.option
+  pk: '5'
+- fields:
+    sort_order: !!python/long '3'
+    name: Blue
+    option_group: !!python/long '2'
+    price_change: !!python/object/apply:decimal.Decimal ['2.00']
+    value: BL
+  model: product.option
+  pk: '6'
+- fields: {sort_order: !!python/long '1', name: Hard cover, option_group: !!python/long '3',
+    price_change: null, value: hard}
+  model: product.option
+  pk: '7'
+- fields:
+    sort_order: !!python/long '2'
+    name: Soft cover
+    option_group: !!python/long '3'
+    price_change: !!python/object/apply:decimal.Decimal ['1.00']
+    value: soft
+  model: product.option
+  pk: '8'
+- fields: {sort_order: !!python/long '3', name: On tape, option_group: !!python/long '3',
+    price_change: null, value: tape}
+  model: product.option
+  pk: '9'
+- fields: {sort_order: !!python/long '1', name: Full Version, option_group: !!python/long '4',
+    price_change: null, value: full}
+  model: product.option
+  pk: '10'
+- fields: {sort_order: !!python/long '2', name: Upgrade Version, option_group: !!python/long '4',
+    price_change: null, value: upgrade}
+  model: product.option
+  pk: '11'
+- fields: {site: 1, description: Women's Shirts, meta: null, name: Shirts, parent: null, slug: shirts}
+  model: product.category
+  pk: '1'
+- fields: {site: 1, description: Short sleeve shirts, meta: null, name: Short Sleeve, parent: !!python/long '1',
+    slug: shortsleeve}
+  model: product.category
+  pk: '2'
+- fields: {site: 1, description: Books, meta: null, name: Books, parent: null, slug: book}
+  model: product.category
+  pk: '3'
+- fields: {site: 1, description: Fiction Books, meta: null, name: Fiction, parent: !!python/long '3',
+    slug: fiction}
+  model: product.category
+  pk: '4'
+- fields: {site: 1, description: Science Fiction, meta: null, name: Science Fiction, parent: !!python/long '4',
+    slug: scifi}
+  model: product.category
+  pk: '5'
+- fields: {site: 1, description: Non Fiction, meta: null, name: Non Fiction, parent: !!python/long '3',
+    slug: nonfiction}
+  model: product.category
+  pk: '6'
+- fields: {site: 1, description: '', meta: null, name: Software, parent: null, slug: software}
+  model: product.category
+  pk: '7'
+- fields: {site: 1, description: '', meta: You know what a computer is, name: Computer, ordering: 0,
+    parent: null, slug: computer}
+  model: product.category
+  pk: 8
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: [!!python/long '1']
+    date_added: 2007-05-30
+    description: Really cool shirt
+    featured: true
+    name: Django Rocks shirt
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '1'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Large/Black)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-l-b
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '12'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Large/Blue)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-l-bl
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '14'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Large/White)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-l-w
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '13'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Medium/Black)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-m-b
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '9'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Medium/Blue)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-m-bl
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '11'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Medium/White)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-m-w
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '10'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Small/Black)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-s-b
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '6'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Small/Blue)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-s-bl
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '8'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Django Rocks shirt (Small/White)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: dj-rocks-s-w
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: true
+    weight: null
+    width: null
+  model: product.product
+  pk: '7'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: [!!python/long '4']
+    date_added: 2007-05-30
+    description: A neat book.  You should buy it.
+    featured: true
+    name: A really neat book
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: neat-book
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '3'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: A really neat book (Hard cover)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: neat-book-hard
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '15'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: A really neat book (Soft cover)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: neat-book-soft
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '16'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: A really neat book (On tape)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: neat-book-tape
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '17'
+#- fields:
+#    active: true
+#    also_purchased: []
+#    category: [!!python/long '7']
+#    date_added: 2007-05-30
+#    description: Example Configurable/Downloadable product
+#    featured: true
+#    name: Really Neat Software
+#    height: null
+#    items_in_stock: '0'
+#    length: null
+#    meta: null
+#    slug: neat-software
+#    related_items: []
+#    short_description: ''
+#    taxClass: null
+#    taxable: false
+#    weight: null
+#    width: null
+#  model: product.product
+#  pk: '5'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Really Neat Software (Full Version)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: neat-software-full
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '21'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Really Neat Software (Upgrade Version)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: neat-software-upgrade
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '22'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: [!!python/long '2']
+    date_added: 2007-05-30
+    description: Really cool python shirt - One Size Fits All
+    featured: true
+    name: Python Rocks shirt
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: PY-Rocks
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '2'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: [!!python/long '5']
+    date_added: 2007-05-30
+    description: Robots try to take over the world.
+    featured: true
+    name: Robots Attack!
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: robot-attack
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '4'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Robots Attack! (Hard cover)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: robot-attack-hard
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '18'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Robots Attack! (Soft cover)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: robot-attack-soft
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '19'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: []
+    date_added: 2007-05-30
+    description: ''
+    featured: false
+    name: Robots Attack! (On tape)
+    height: null
+    items_in_stock: '0'
+    length: null
+    meta: null
+    slug: robot-attack-tape
+    related_items: []
+    short_description: ''
+    taxClass: null
+    taxable: false
+    weight: null
+    width: null
+  model: product.product
+  pk: '20'
+- fields:
+    create_subs: false
+    option_group: [!!python/long '1', !!python/long '2']
+  model: configurable.configurableproduct
+  pk: '1'
+- fields:
+    create_subs: false
+    option_group: [!!python/long '3']
+  model: configurable.configurableproduct
+  pk: '3'
+- fields:
+    create_subs: false
+    option_group: [!!python/long '3']
+  model: configurable.configurableproduct
+  pk: '4'
+#- fields:
+#    create_subs: false
+#    option_group: [!!python/long '4']
+#  model: configurable.configurableproduct
+#  pk: '5'
+- fields:
+    options: [!!python/long '1', !!python/long '4']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '6'
+- fields:
+    options: [!!python/long '1', !!python/long '5']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '7'
+- fields:
+    options: [!!python/long '1', !!python/long '6']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '8'
+- fields:
+    options: [!!python/long '2', !!python/long '4']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '9'
+- fields:
+    options: [!!python/long '2', !!python/long '5']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '10'
+- fields:
+    options: [!!python/long '2', !!python/long '6']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '11'
+- fields:
+    options: [!!python/long '3', !!python/long '4']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '12'
+- fields:
+    options: [!!python/long '3', !!python/long '5']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '13'
+- fields:
+    options: [!!python/long '3', !!python/long '6']
+    parent: !!python/long '1'
+  model: configurable.productvariation
+  pk: '14'
+- fields:
+    options: [!!python/long '7']
+    parent: !!python/long '3'
+  model: configurable.productvariation
+  pk: '15'
+- fields:
+    options: [!!python/long '8']
+    parent: !!python/long '3'
+  model: configurable.productvariation
+  pk: '16'
+- fields:
+    options: [!!python/long '9']
+    parent: !!python/long '3'
+  model: configurable.productvariation
+  pk: '17'
+- fields:
+    options: [!!python/long '7']
+    parent: !!python/long '4'
+  model: configurable.productvariation
+  pk: '18'
+- fields:
+    options: [!!python/long '8']
+    parent: !!python/long '4'
+  model: configurable.productvariation
+  pk: '19'
+- fields:
+    options: [!!python/long '9']
+    parent: !!python/long '4'
+  model: configurable.productvariation
+  pk: '20'
+#- fields:
+#    options: [!!python/long '10']
+#    parent: !!python/long '5'
+#  model: configurable.productvariation
+#  pk: '21'
+#- fields:
+#    options: [!!python/long '11']
+#    parent: !!python/long '5'
+#  model: configurable.productvariation
+#  pk: '22'
+- fields:
+      sort: !!python/long '1'
+      picture: 'images/productimage-picture-default.jpg'
+      caption: 'Photo Not Available'
+  model: product.productimage
+  pk: '1'
+- fields:
+    site: 1
+    active: true
+    also_purchased: []
+    category: [8]
+    date_added: 2008-02-19
+    description: Satchmo computer. It does it all!
+    featured: false
+    height: null
+    height_units: ''
+    items_in_stock: 0
+    length: null
+    length_units: ''
+    meta: ''
+    name: satchmo computer
+    ordering: 0
+    related_items: []
+    short_description: Not much else to say.
+    sku: satch-1
+    slug: satchmo-computer
+    taxClass: null
+    taxable: false
+    weight: null
+    weight_units: ''
+    width: null
+    width_units: ''
+  model: product.product
+  pk: 30
+- fields: {sort_order: 1, name: 1 GB, option_group: 5, price_change: '0.000000',
+    value: 1gb}
+  model: product.option
+  pk: 12
+- fields: {sort_order: 2, name: 1.5 GB, option_group: 5, price_change: '25.000000',
+    value: 1.5gb}
+  model: product.option
+  pk: 13
+- fields: {sort_order: 3, name: 2 GB, option_group: 5, price_change: '50.000000',
+    value: 2gb}
+  model: product.option
+  pk: 14
+- fields: {sort_order: 1, name: Cheap, option_group: 6, price_change: '0.000000',
+    value: cheap}
+  model: product.option
+  pk: 15
+- fields: {sort_order: 2, name: Mid, option_group: 6, price_change: '10.000000',
+    value: mid}
+  model: product.option
+  pk: 16
+- fields: {sort_order: 3, name: Large Tower, option_group: 6, price_change: '11.000000',
+    value: tower}
+  model: product.option
+  pk: 17
+- fields:
+    expires: null
+    price: !!python/object/apply:decimal.Decimal ['2.00']
+    product: !!python/long '21'
+    quantity: !!python/long '50'
+  model: product.price
+  pk: '6'
+- fields:
+    expires: null
+    price: !!python/object/apply:decimal.Decimal ['20.00']
+    product: !!python/long '1'
+    quantity: !!python/long '1'
+  model: product.price
+  pk: '1'
+- fields:
+    expires: null
+    price: !!python/object/apply:decimal.Decimal ['19.50']
+    product: !!python/long '2'
+    quantity: !!python/long '1'
+  model: product.price
+  pk: '2'
+- fields:
+    expires: null
+    price: !!python/object/apply:decimal.Decimal ['5.00']
+    product: !!python/long '3'
+    quantity: !!python/long '1'
+  model: product.price
+  pk: '3'
+- fields:
+    expires: null
+    price: !!python/object/apply:decimal.Decimal ['7.99']
+    product: !!python/long '4'
+    quantity: !!python/long '1'
+  model: product.price
+  pk: '4'
+#- fields:
+#    expires: null
+#    price: !!python/object/apply:decimal.Decimal ['5.00']
+#    product: !!python/long '21'
+#    quantity: !!python/long '1'
+#  model: product.price
+#  pk: '5'
+#- fields:
+#    expires: null
+#    price: !!python/object/apply:decimal.Decimal ['1.00']
+#    product: !!python/long '22'
+#    quantity: !!python/long '1'
+#  model: product.price
+#  pk: '7'
+#- fields: {}
+#  model: product.downloadableproduct
+#  pk: '21'
+#- fields: {}
+#  model: product.downloadableproduct
+#  pk: '22'
+- fields: {expires: null, price: '123.000000', product: 30, quantity: 1}
+  model: product.price
+  pk: 5
+- fields:
+    deferred_shipping: false
+    downpayment: 100
+    option_group: [5, 6]
+  model: custom.customproduct
+  pk: 30
+- fields: {name: Monogram, price_change: '10.000000', products: 30, slug: monogram,
+    sort_order: 1}
+  model: custom.customtextfield
+  pk: 1

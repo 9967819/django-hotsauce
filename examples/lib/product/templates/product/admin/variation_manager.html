@@ -1,0 +1,377 @@
+{% extends "admin/base_site.html" %}
+{% load i18n satchmo_util adminmedia %}
+
+{% block breadcrumbs %}{% if not is_popup %}
+<div class="breadcrumbs">
+     <a href="/admin/">{% trans "Home" %}</a> &rsaquo;
+     <a href="{% url satchmo_admin_variation_list %}">{% trans 'Product Variation Manager' %}</a>
+</div>
+{% endif %}{% endblock %}
+
+{% block extrahead %}
+	<style type="text/css">
+	form td { padding: 1px;	}
+	form th, form h2 { margin:0; padding:2px 2px 3px 2px; font-size:11px; text-align:left; font-weight:bold; background-color:#7CA0C7; color:white;}
+	#variation_options ul {	margin-left: 5px; padding: 0 4px;}
+	#variation_options li {	list-style: none; }
+	</style>
+	{% blackbird_logging %}
+    <script type="text/javascript" src="{{media_url}}js/jquery.js"></script>
+    <script type="text/javascript" src="{{media_url}}js/jquery.form.js"></script>
+    <script type="text/javascript">
+    var satchmo = satchmo || {};
+    
+    satchmo.deselect_all = function() {
+        satchmo.toggle('#variation_products input', false);
+    };
+    
+    satchmo.hide_inactive = function() {
+        $('#variation_products .checkbox input').each(function() {
+            if (!$(this)[0].checked) {
+                $(this).parent().parent().hide();
+            }
+        });
+    };
+
+    satchmo.toggle = function(cls, state) {
+        $(cls).each(function() { this.checked = state });
+        return false;
+    };
+    
+    satchmo.optionkeys = {{ form.optionkeys|as_json }};
+    
+    satchmo.cross_list = function(list) {
+        var fn = function(head, list, work) {
+            var first = list[0];
+            for (var i=0; i<first.length; i++) {
+                var elt = first[i];
+                var h = (head == "") ? elt : head + "__" + elt;
+                
+                if (list.length > 1) {
+                    fn(h, list.slice(1), work);
+                }
+                else {
+                    work.push(h);
+                }
+            }
+            return work
+        }
+        
+        work = fn("#id_pv", list, []);
+        return work;
+    };
+
+    satchmo.select_all = function() {
+        satchmo.toggle('#variation_options input', true);
+        satchmo.toggle('#variation_products .checkbox input', true);
+    }
+        
+    satchmo.select_these = function(only, state) {
+        
+        keys = satchmo.selected_by_group();
+        if (keys.length > 0) {
+            if (only) {
+                satchmo.deselect_all();
+            }
+            
+            for (var i=0; i<keys.length; i++) {
+                var key = keys[i];
+                satchmo.toggle(key, state);
+            }
+        }
+    };
+    
+    satchmo.selected_by_group = function() {
+        var opts = [];
+    
+        for (var i=0; i<satchmo.optionkeys.length; i++) {
+            var key = satchmo.optionkeys[i];
+            var group = satchmo.optiongroups[key];
+            var group_choices = [];
+            for (var j=0; j<group.length; j++) {
+                var elt = $('#id_optiongroup__' + group[j])[0];
+                if (elt.checked) {
+                    group_choices.push(elt.value)
+                }
+            }
+            if (group_choices.length > 0) {
+                opts.push(group_choices);
+            }
+        }
+        
+        if (opts.length != satchmo.optionkeys.length) {
+            alert('You have to pick one from each optiongroup before this will work');
+            return [];
+        }
+        
+        return satchmo.cross_list(opts);
+    };
+
+	satchmo.submit_dirty_variations = function() {
+		var ct = 0;
+		var dirty = {};
+		var dirty_ids = []
+		$('form #variation_products input').each(
+			function() {
+				if (this.id != 'id_dirty') {
+					var parts = this.id.split("__");
+					parts.shift();
+		            var key = parts.join("__");
+					if (!dirty[key]) {
+						var oldval = satchmo.initial_vals[this.id];
+						if ($(this).is('input[@type=text]')) {
+							var newval = $(this).fieldValue();
+							var changed = (oldval + "" != newval + "");
+						}
+						else {
+							var newval = this.checked;
+							var changed = (oldval != newval);
+						}
+						if (changed) {
+							try { log.debug('Dirty ' + key); } catch(err) {};		            
+							dirty[key] = true;
+							dirty_ids.push(key);
+						}
+					}
+				}
+			}
+		);
+		
+		if (dirty_ids.length == 0) {
+			alert('nothing has been changed');
+			return false;
+		}
+		else {
+			$('#id_dirty').attr('value', dirty_ids.join(','));
+		}
+		
+		return true;
+	};
+
+    satchmo.show_all = function() {
+        $('tr.optionrow').each(function() {
+            $(this).show();
+        });
+    };
+
+    satchmo.initial_vals = {};
+
+    $(function() {
+        // make a list of the optiongroups and associated checkbox keys for easier lookup later
+        satchmo.optiongroups = {};
+        for (var i=0; i<satchmo.optionkeys.length; i++) {
+            satchmo.optiongroups[satchmo.optionkeys[i]] = [];
+        }
+
+		// Get initial values
+		$('form #variation_products input').each(
+			function() {
+				if ($(this).is('input[@type=text]')) {
+					val = $(this).fieldValue();
+				}
+				else {
+					val = this.checked;
+				}
+				satchmo.initial_vals[this.id] = val;
+			}
+		)
+        
+        $('#variation_options .checkbox input').each(function() {
+            var parts = this.id.split("__");
+            var key = parts[1];
+            var group = key.split("_")[0];
+
+            satchmo.optiongroups['optiongroup__' + group].push(key)
+        })
+
+        $('#select_all').click(function() {
+            satchmo.select_all();
+            return false;
+        });
+    
+        $('#select_these').click(function() {
+            satchmo.select_these(false, true);
+            return false;
+        });
+        
+        $('#select_only_these').click(function() {
+            satchmo.select_these(true, true);
+            return false;
+        });
+        
+        $('#deselect_these').click(function() {
+            satchmo.select_these(false, false);
+            return false;
+        });
+        
+        $('#deselect_all').click(function() {
+            satchmo.deselect_all();
+            return false;
+        });
+        
+        $('#show_all').click(function() {
+            satchmo.show_all();
+            return false;
+        });
+        
+        $('#hide_inactive').click(function() {
+            satchmo.hide_inactive();
+            return false;
+        });
+
+		$('#id_submit').click(function() {
+			satchmo.submit_dirty_variations();
+		})
+        
+    });
+    </script>
+{% endblock %}
+{% block content %}
+<h1>{% blocktrans with product.name as product_name %}Variation Manager for {{ product_name }}{% endblocktrans %}</h1>
+{% if form.errors %}
+    <p class="errornote">
+    {% blocktrans count importform.errors|length as counter %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+{% endif %}
+
+<fieldset class="module">
+<h2>{% trans "Variations" %}</h2>
+<div style="font-style: italic; font-size: .9em;">
+    {% blocktrans %}
+    <p>The Variation Manager helps create the exact set of variations you need for your Configurable Product</p>
+    <p>Make choices from the Option Groups below, and then click one of the helper links 
+    below them to select or deselect variations which have those options.</p>
+    <p>Fine tune the active variations by putting a checkmark next to those that you want to keep or 
+    create, then then click <b>Update Variations</b>.
+    </p>
+    {% endblocktrans %}
+</div>
+<form name="variations" action="{% url satchmo_admin_variation_manager product.id %}" method="POST">
+	{{ form.dirty }}
+<div style="float:left;">
+    <table id="variation_options" style="border-right: 1px solid #999; margin-right: 3px;">
+    <tr>
+        <th>{% trans "Options" %}</th>
+    </tr>
+    {% for grp in form.optionkeys %}
+    {% with form|lookup:grp as field %}
+	<tr>
+		<th>{{ field.label_tag }}</th>
+	</tr>
+    <tr>
+        <td class="checkbox">
+            {{ field }}
+            {% if field.errors %}
+    		<span class="error">{{ field.errors }}</span><br/>
+	        {% endif %}    
+            
+        </td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    <tr>
+        <th>
+            {% trans "Helper Links" %}
+        </th>
+    </tr>
+    <tr>
+		<td>
+			<ul>
+				<li>
+					<a href="#" id="select_these" name="select_these">{% trans 'Select These Options' %}</a>
+				</li>
+				<li>
+					<a href="#" id="select_only_these" name="select_only_these">{% trans 'Select Only These Options' %}</a>
+				</li>
+				<li>
+					<a href="#" id="select_all" name="select_all">{% trans 'Select All' %}</a>
+				</li>
+				<li>
+					<a href="#" id="deselect_these" name="deselect_these">{% trans 'Deselect These Options' %}</a>
+				</li>
+				<li>
+					<a href="#" id="deselect_all" name="deselect_all">{% trans 'Deselect All' %}</a>
+				</li>
+				<li>
+					<a href="#" id="show_all" name="show_all">{% trans 'Show All' %}</a>
+				</li>
+				<li>
+					<a href="#" id="hide_inactive" name="hide_inactive">{% trans 'Hide Inactive Rows' %}</a>
+				</li>
+			</ul>
+		</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input id="id_submit" type="submit" value="{% trans "Update Variations" %}" />
+            <input type="reset" value="{% trans "Reset Form" %}" />
+        </td>
+    </tr>
+    </table>
+</div>
+<div style="float:left;">
+    <table id="variation_products">
+    <tr>
+        <th>{% trans "Variation" %}</th>
+        <th>{% trans "Exists" %}</th>
+        <th>{% trans "Create/Keep" %}</th>
+        <th>{% trans "Name" %}</th>
+        <th>{% trans "SKU" %}</th>
+        <th>{% trans "Slug" %}</th>
+    </tr>
+    {% for varkey in form.variationkeys %}
+    {% with form|lookup:varkey as field %}
+    <tr class="optionrow">
+        <td>
+            {% if form.existing|lookup:varkey %}
+                <a href="{{ form.edit_urls|lookup:varkey }}">{{ field.label}}</a>
+            {% else %}
+                {{ field.label_tag }}
+            {% endif %}
+        </td>
+        <td>
+            <img src="{% admin_media_prefix %}img/admin/icon-{% if form.existing|lookup:varkey %}yes.gif" alt="{% trans "yes" %}"{% else %}no.gif" alt="{% trans "no" %}"{% endif %} />
+        </td>
+        <td class="checkbox">
+            {{ field }}
+            {% if field.errors %}
+    		<span class="error">{{ field.errors }}</span>
+	        {% endif %}
+        </td>
+        <td>
+            {% with form.namedict|lookup:varkey as namekey %}
+            {% with form|lookup:namekey as field %}
+            {{ field }}
+            {% if field.errors %}
+    		<span class="error">{{ field.errors }}</span>
+	        {% endif %}
+            {% endwith %}
+            {% endwith %}
+        </td>
+        <td>
+            {% with form.skudict|lookup:varkey as skukey %}
+            {% with form|lookup:skukey as field %}
+            {{ field }}
+            {% if field.errors %}
+    		<span class="error">{{ field.errors }}</span>
+	        {% endif %}
+            {% endwith %}
+            {% endwith %}
+        </td>
+        <td>
+            {% with form.slugdict|lookup:varkey as slugkey %}
+            {% with form|lookup:slugkey as field %}
+            {{ field }}
+            {% if field.errors %}
+    		<span class="error">{{ field.errors }}</span>
+	        {% endif %}
+            {% endwith %}
+            {% endwith %}
+        </td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    </table>
+</div>
+</form>
+</fieldset>
+{% endblock %}

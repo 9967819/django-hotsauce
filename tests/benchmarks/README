@@ -1,0 +1,10 @@
+List of projects to be tested:
+
+Django-hotsauce 0.8.2 with CPython 3.7 (Cython)
+Django-hotsauce 0.8.2 with CPython 2.7 and ZODB database (Cython)
+Django-hotsauce 0.9.0 with PyPy 5.9 (ZODB)
+Django-hotsauce 0.9.0 with CPython 3.7
+Django 1.11.7 with CPython 3.7 (sqlite)
+Django 1.11.7 with PyPy 5.9 (sqlite)
+Django 2.0.2 with CPython 3.7 (sqlite)
+Django 2.0.2 with PyPy 5.9 (sqlite)

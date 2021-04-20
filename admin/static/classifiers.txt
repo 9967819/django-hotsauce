@@ -1,0 +1,10 @@
+Development Status :: 4 - Beta
+Framework :: Django
+Intended Audience :: Developers
+Intended Audience :: End Users/Desktop
+Operating System :: OS Independent
+Programming Language :: Python
+Programming Language :: C
+Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Topic :: Internet :: WWW/HTTP :: WSGI :: Server
+Topic :: Software Development :: Libraries :: Python Modules

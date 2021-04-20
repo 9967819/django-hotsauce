@@ -1,0 +1,13 @@
+To run the LiveStore demo based on Satchmo 0.9, run:
+ 
+    % export DJANGO_SETTINGS_MODULE=satchmo_store.settings
+    % ./bin/debug.sh manage satchmo_check
+    % ./bin/debug.sh manage syncdb
+    % ./bin/debug.sh manage satchmo_load_l10n
+    % ./bin/debug.sh manage satchmo_load_store
+
+Then to run the HTTP server for local development: 
+
+    % ./bin/debug.sh livestoredemo
+
+

@@ -1,0 +1,35 @@
+#!/bin/sh
+# Example djangorc file. Either modify this one to taste
+# and copy it to ~/.djangorc or /etc/djangorc for a system-wide
+# install.
+
+#Path to a custom Django installation
+DJANGO_REVISION=1.3.1
+DJANGO_HOME="/usr/local/share/django/Django-$DJANGO_REVISION"
+if [ -x "$DJANGO_HOME" ]; then
+ echo "Found DJANGO_HOME, good."
+else
+ echo "Please consider setting the \'DJANGO_HOME\' variable." 
+fi
+
+#Path to the root directory (usually ".")
+#Default: "." 
+ROOTDIR=`cd -P -- "$(dirname -- "$0")/" && pwd -P`
+#Directory where architecture-dependent files are located,
+#usually $ROOTDIR/lib/site-packages
+LIBDIR="$ROOTDIR/lib/site-packages"
+if [ ! -n "$PYTHONPATH" ]; then
+ PYTHONPATH="$ROOTDIR:$DJANGO_HOME:$LIBDIR"
+fi
+if [ -r "$ROOTDIR/local_settings.py" ];
+then
+ DJANGO_SETTINGS_MODULE=local_settings
+else
+ DJANGO_SETTINGS_MODULE=sandbox.config.settings
+fi
+
+#export PYTHONFLAGS=-Wi
+export PYTHONIOENCODING="utf8"
+export PYTHONHASHSEED=random
+#export PYTHONRANDOMHASH=1
+export ROOTDIR PYTHONPATH DJANGO_SETTINGS_MODULE DJANGO_HOME

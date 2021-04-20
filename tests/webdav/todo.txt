@@ -1,0 +1,2 @@
+- Directory indexes for protected realms (see WsgiDav)
+- test with additional middlewares

@@ -1,0 +1,36 @@
+This directory aims to provide scripts for trying out notmm
+on your own. 
+
+Currently, only demo.py is available, but adding more
+advanced examples could be a plus! ;-)
+
+Usage
+-----
+
+First, you'll need the following environment variables to be defined:
+
+* ``DJANGO_HOME`` - I.e: A recent Django snapshot and optional patches from ``django.bugfixes``.
+* ``DJANGO_SETTINGS_MODULE`` - A module name to load regular Django settings from.
+
+% export DJANGO_HOME=/usr/local/share/Django
+% export DJANGO_SETTINGS_MODULE=helloworld.config.settings
+
+Then to customize the basic user settings:
+
+% cp development.ini.sample development.ini
+% edit development.ini ...
+
+Next, launch httpserver:
+
+ % python ../tools/httpserver.py -c path/to/development.ini --settings helloworld.settings
+
+To run the satchmo store demo:
+
+ % export DJANGO_SETTINGS_MODULE=satchmo_store.settings
+ % python ../tools/httpserver.py -c conf/satchmo_store.ini --settings=$DJANGO_SETTINGS_MODULE --path=./lib
+
+(Note the path argument at the end of the command line!)
+
+
+Have fun!
+

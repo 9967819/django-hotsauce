@@ -1,0 +1,27 @@
+MoinMoin WSGI application backbone
+
+Minimal code for using this ::
+
+.. coding: python
+
+    from MoinMoin.server.server_wsgi import WsgiConfig
+    import wikiapp
+
+    class Config(WsgiConfig):
+        pass
+
+    config = Config() # you MUST create an instance
+    
+    # use moinmoinApp here with your WSGI server / gateway
+    wsgi_app = wikiapp.MoinMoinController(
+        settings=Config(), # Local config instance
+        )
+
+:Copyright: 2005 Anakim Border <akborder@gmail.com>,
+            2007 MoinMoin:ThomasWaldmann
+            2009-2017 Etienne Robillard
+
+:License:   Apache licensed, see NOTICE for details.
+
+:Maintainer: Etienne Robillard <tkadm30@yandex.com>
+

@@ -1,0 +1,13 @@
+include AUTHORS ChangeLog CONTRIBUTORS COPYING INSTALL MANIFEST.in NEWS README
+include gazpacho.desktop setup.py
+include bin/gazpacho
+recursive-include catalogs *.xml *.dtd
+recursive-include doc *.dia *.png *.txt
+recursive-include examples *.py *.glade
+recursive-include gazpacho *.py
+recursive-include glade *.glade
+recursive-include locale *.mo
+recursive-include pixmaps *.png
+recursive-include resources *.png
+recursive-include po gazpacho.pot *.po
+recursive-include plugins *.plugin *.py

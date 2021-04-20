@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!ELEMENT glade-catalog (glade-widget-classes?, 
+                         glade-widget-group*)>
+
+<!ATTLIST glade-catalog name            CDATA #REQUIRED
+                        priority        CDATA #IMPLIED
+                        library         CDATA #IMPLIED
+                        library-type    (c|python) #IMPLIED
+                        requires        CDATA #IMPLIED>
+
+<!ELEMENT glade-widget-classes (glade-widget-class+)>
+
+<!ELEMENT glade-widget-class (tooltip?,
+		                      packing-defaults?)>
+
+<!ATTLIST glade-widget-class name          CDATA #REQUIRED
+                             generic-name  CDATA #IMPLIED
+			                 title         CDATA #IMPLIED
+			                 adaptor-class CDATA #IMPLIED
+                             register-type-function CDATA #IMPLIED>
+
+<!ELEMENT glade-widget-group (glade-widget-class-ref+)>
+
+<!ATTLIST glade-widget-group name  CDATA #REQUIRED
+                             title CDATA #REQUIRED>
+
+<!ELEMENT glade-widget-class-ref EMPTY>
+<!ATTLIST glade-widget-class-ref name CDATA #REQUIRED>
+
+<!ELEMENT packing-defaults (parent-class+)>
+

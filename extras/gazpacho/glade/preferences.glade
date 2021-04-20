@@ -1,0 +1,130 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: xml -*-->
+<!DOCTYPE glade-interface SYSTEM "http://gazpacho.sicem.biz/gazpacho-0.1.dtd">
+<glade-interface>
+    <widget class="GtkListStore" id="model1">
+        <columns>
+            <column type="gboolean"/>
+            <column type="gchararray"/>
+        </columns>
+    </widget>
+    <widget class="GtkDialog" id="dialog">
+        <property name="border_width">6</property>
+        <property name="default_height">460</property>
+        <property name="default_width">430</property>
+        <property name="destroy_with_parent">True</property>
+        <property name="has_separator">False</property>
+        <property name="title" context="yes" translatable="yes">Preferences</property>
+        <property name="type_hint">normal</property>
+        <child internal-child="vbox">
+            <widget class="GtkVBox" id="dialog1-vbox">
+                <property name="border_width">2</property>
+                <property name="visible">True</property>
+                <child>
+                    <widget class="GtkNotebook" id="notebook">
+                        <property name="is_focus">True</property>
+                        <property name="visible">True</property>
+                        <child>
+                            <widget class="GtkVBox" id="plugins">
+                                <property name="border_width">6</property>
+                                <property name="spacing">6</property>
+                                <property name="visible">True</property>
+                                <child>
+                                    <widget class="GtkScrolledWindow" id="scrolledwindow1">
+                                        <property name="hscrollbar_policy">automatic</property>
+                                        <property name="shadow_type">in</property>
+                                        <property name="visible">True</property>
+                                        <property name="vscrollbar_policy">automatic</property>
+                                        <child>
+                                            <widget class="GtkTreeView" id="plugins_list">
+                                                <property name="is_focus">True</property>
+                                                <property name="model">model1</property>
+                                                <property name="search_column">0</property>
+                                                <property name="visible">True</property>
+                                                <child>
+                                                    <widget class="GtkTreeViewColumn" id="treeviewcolumn1">
+                                                        <property name="title" context="yes" translatable="yes">Activated</property>
+                                                        <child>
+                                                            <widget class="GtkCellRendererToggle" id="treeviewcolumn1-renderer1"/>
+                                                            <attributes>
+                                                                <attribute name="active">0</attribute>
+                                                            </attributes>
+                                                        </child>
+                                                    </widget>
+                                                </child>
+                                                <child>
+                                                    <widget class="GtkTreeViewColumn" id="treeviewcolumn2">
+                                                        <property name="title" context="yes" translatable="yes">Name</property>
+                                                        <child>
+                                                            <widget class="GtkCellRendererText" id="treeviewcolumn2-renderer1"/>
+                                                            <attributes>
+                                                                <attribute name="text">1</attribute>
+                                                            </attributes>
+                                                        </child>
+                                                    </widget>
+                                                </child>
+                                            </widget>
+                                        </child>
+                                    </widget>
+                                </child>
+                                <child>
+                                    <widget class="GtkHButtonBox" id="hbuttonbox1">
+                                        <property name="layout_style">spread</property>
+                                        <property name="visible">True</property>
+                                        <child>
+                                            <widget class="GtkButton" id="plugin_about">
+                                                <property name="label">gtk-about</property>
+                                                <property name="use_stock">True</property>
+                                                <property name="visible">True</property>
+                                            </widget>
+                                        </child>
+                                        <child>
+                                            <widget class="GtkButton" id="plugin_preferences">
+                                                <property name="label">gtk-preferences</property>
+                                                <property name="use_stock">True</property>
+                                                <property name="visible">True</property>
+                                            </widget>
+                                            <packing>
+                                                <property name="position">1</property>
+                                            </packing>
+                                        </child>
+                                    </widget>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
+                                        <property name="position">1</property>
+                                    </packing>
+                                </child>
+                            </widget>
+                            <packing>
+                                <property name="tab_label" context="yes" translatable="yes">Plugins</property>
+                            </packing>
+                        </child>
+                    </widget>
+                    <packing>
+                        <property name="position">1</property>
+                    </packing>
+                </child>
+                <child internal-child="action_area">
+                    <widget class="GtkHButtonBox" id="dialog1-action_area">
+                        <property name="border_width">5</property>
+                        <property name="layout_style">end</property>
+                        <property name="spacing">10</property>
+                        <property name="visible">True</property>
+                        <child>
+                            <widget class="GtkButton" id="close">
+                                <property name="is_focus">True</property>
+                                <property name="label">gtk-close</property>
+                                <property name="use_stock">True</property>
+                                <property name="visible">True</property>
+                            </widget>
+                        </child>
+                    </widget>
+                    <packing>
+                        <property name="expand">False</property>
+                        <property name="pack_type">end</property>
+                    </packing>
+                </child>
+            </widget>
+        </child>
+    </widget>
+</glade-interface>

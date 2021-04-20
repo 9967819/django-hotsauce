@@ -1,0 +1,16 @@
+{# used by status_ordercounts templatetags #}
+{% load satchmo_currency i18n normalize_decimal %}
+<ul>
+{% for order in orders %}
+	<li>
+		{% if multihost %}[{{ order.site.name }}] {% endif %}<a href="shop/order/{{ order.id }}/">{{ order }}</a> 
+		&ndash; {{ order.total|currency }} {% trans "on" %} {{ order.time_stamp|date:"F jS Y H:i" }}
+	    <ul>
+	        {% for item in order.orderitem_set.all %}
+	            <li>
+					{{ item }} x {{ item.quantity|normalize_decimal }}
+				</li>
+	        {% endfor %}
+	    </ul>
+	</li>{% endfor %}
+</ul>

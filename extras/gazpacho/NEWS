@@ -1,0 +1,382 @@
+Gazpacho-0.7.2 28-Jul-2007
+- Saner and cleaner way to handle gadget dependencies (Mattias)
+- Allow continue use of Gazpacho after a non fatal crash (Johan)
+- Default serializer is now GtkBuilder 100% compatible (Johan)
+- Lot's of bug fixes:
+  #344010, #42393, #422259, #405779 and #361009
+
+Gazpacho-0.7.1 17-Mar-2007
+- New --version command line option
+- Keybindings for recent files in the File Menu
+- UIEditor cleanups and bug fixes
+- Support for CustomProperty change notifications
+- Plugin framework improvements
+- Show property descriptions as tooltips in the editor
+- Lot's of bug fixes:
+  #357486: support for python 2.5
+  #407828: more checks in d'n'd code
+  #381195: revert default action group name
+
+Gazpacho-0.7.0 26-Nov-2006
+- New menu editor
+- Support UI customization
+- TreeView support
+- Commands rework
+- Plugins support
+- Refactoring (app, property editor, filewriter, gettext)
+- Rename gazpacho.widget to gazpacho.gadget
+- Improve support for GtkImage
+- Improve support for GtkSizeGroups
+- GtkTable improvements
+- Add infrastructure for GtkBuilder support
+- Lot's of bug fixes:
+  #344682: Avoid dropping widgets inside its children
+  #330652: Add GtkWidget::response-id support (still incomplete)
+  #343283: Problems with catalogs
+  #340837: Sort stock icons
+  #342381: Set the value column to editable
+  #342302: Undo radio button group changes
+  #332224: Radio buttons and size groups issues
+  #336911: More issues with radio buttons and undo
+  #332626: Only look for mapped widgets in selection code
+  #337273: Problems when cutting and pasting bars
+  #341427, #341426 and #341425: Update translations
+  #315529: Get internal children when iterating in a container
+  #341428: Don't mark the workspace title as translatable
+  #324106: Don't crash when dragging radio buttons between projects
+  #354051: Copying labels with mnemonic widgets
+  #354053: Dragging widgets between Gazpacho instances
+
+Gazpacho-0.6.6 03-May-2006
+- Now depends on kiwi
+- Improved selection
+- Refactoring (menus, dnd)
+- Lot's of bug fixes:
+  #329120: The widget tree isn't updated when the widget name changes
+  #330180: Project: widget dict isn't updated after name changes
+  #330459: Disable preview action
+  #168412: [PATCH] Opening a glade file containing a Gnome Canvas pr...
+  #319514: Crash when editing a menubar's name
+  #326342: Child properties are confused with normal
+  #329094: app.py:539 IndexError: list index out of range
+  #329881: editor.py:400 AttributeError: 'GtkLabel::label' object ha...
+  #329914: Dialog: properties not saved correctly
+  #329916: Box: changing size should remove placeholders first
+  #330069: Bars: crash when editing ui definitions
+  #330775: prop_registry.override_simple bug
+  #332225: Dialog: border width property of the vbox should be hidden
+  #332243: Patch: better default values for a few widgets
+  #332607: app.py:981 TypeError: messagedialog() got an unexpected k...
+  #333018: uieditor.py:251 TypeError: GtkContainer.add() argument 1 ...
+  #333034: widgetview.py:336 TypeError: iter should be a GtkTreeIter
+  #333043: Crash when changing names of two widgets
+  #334460: Crash when opening an invalid glade file
+  #334905: Missing signal from glade file
+  #335156: [patch] setup.py installs $datadir/catalogs/base.xml to t...
+  #335908: Traceback trying to enter U+2022 with Shift+Ctrl in the I...
+  #336547: Show active project in project menu
+  #336979: loader should create accelerator for action having a stoc...
+  #336994: signal_autoconnect should(?) ignore signals missing from ...
+  #337094: disable project property menu when no project
+  #338340: app.py:890 UnicodeDecodeError: 'utf8' codec can't decode ...
+  #338465: app.py:1116 AttributeError: 'NoneType' object has no attr...
+  #339635: Notebook: page isn't updated when selecting widgets
+
+Gazpacho-0.6.5 27-January-2006
+- Object support to the signal editor
+- Make widgets visible by default
+- Copy/Paste naming improvements
+- Updated translations (Rafael Villar Burke)
+- Smaller toolbar by default
+- Add a workspace widget, disabled by default (Johan, Havoc Pennington)
+- Drag and drop from the palette
+- Recent project bug fixes
+- Major code refactoring and renaming
+- Optimizations, especially running the test suite should be faster
+- Bugs fixed (Gustavo Carneiro, Johan, Mattias)
+  #316574: External widgets problems..
+  #326009: Drag and drop doesn't always work from the palette
+  #326010: The dragged widget isn't selected after extending a box
+  #311649: SignalEditor: connect_object support
+  #314098: Actions and action groups aren't always saved
+  #315625: GtkToolbar: better property support in loader
+  #318528: GtkAction: properties are saved translated
+  #318601: Delete action isn't disabled after deleting a placeholder...
+  #321971: GtkDialog: buttons are sometimes lost
+  #326668: Recently used projects buggy
+  #326724: GtkWidget: visible should be default
+  #326989: Add a worktable widget
+  #327071: Allow using libraries without adaptors
+  #327115: Box: problems with deleting placeholders
+  #327849: Button: name is changed when adding a stock icon + crash
+  #327973: DnD: error when undoing a drag extend
+  #328669: util.py:469 IOError: [Errno 9] Bad file descriptor
+  #328670: app.py:879 AttributeError: 'NoneType' object has no attri...
+
+Gazpacho-0.6.4 10-January-2006
+- Bugs fixed (Ross Burton, Johan, Mattias), 
+  #304392: Gazpacho doesn't respect max/min values (Johan)
+  #317901: Cannot create GtkFontButton (Ross Burton)
+  #320527: Number of pages in a notebook.. (Mattias)
+  #325851: InternalChildTest occasionally fails (Johan)
+  #326027: The paste action isn't enabled.. (Mattias)
+  #326043: Undo/redo text for 'insert before' (Mattias)
+  #326048: Send Bugreport on Windows XP crashes (Johan)
+  #326105: It should not be possible to add windows (Mattias)
+
+Gazpacho-0.6.3 5-January-2006
+- GtkComboBox fixes (Zeeshan)
+- GtkTable fixes (Johan)
+- Copy/Paste (Mattias)
+- Drag-n-drop (Mattias)
+- Much improved tests (Johan)
+- GtkSizeGroup support (Johan, Mattias)
+- UI improvments (Johan, Mattias)
+- Various refactoring (Johan)
+- API Documentation (Johan)
+- Support is-important and short-label (Mike)
+- Bugs fixed (Zeeshan, Johan, Mattias, Kalle Vahlman, Mike Gratton):
+  #172717: GtkSizeGroup support
+  #307363: TraceBack parsing a .glade
+  #313170: Patch: Project should not be marked as changed when undon...
+  #313516: Bug report improvements
+  #313529: Loading a glade file containing modal dialogs breaks the ...
+  #313771: Crash on 2005-08-17 19:05
+  #314040: Exception when redoing a toolbar creation
+  #314041: DnD for toobars and menubars doesn't work
+  #314111: Dragging widgets between different boxes doesn't work
+  #314196: Undoing cutting a toolbar sometimes raises an exception
+  #314581: Dragging a widget to an internal placeholder
+  #315423: Missing properties for GtkWindow
+  #315444: Property 'active' of GtkComboBox not loaded correctly
+  #315747: About dialog can't find COPYING doc
+  #315802: Crash on 2005-08-23 10:48
+  #315880: Crash on 2005-09-09 19:30
+  #315982: Cannot load SJ glade file
+  #316062: GtkButton's 'image' is not loaded
+  #316083: Needed patch for the HildonFindToolbar
+  #316196: enum_class is None in get_choices()
+  #316388: Images of buttons should not be selectable
+  #316416: Opening the same glade file twice
+  #316532: Crash after deleting a placeholder in a table
+  #316785: Widget names with underscores cause weird accelerator und...
+  #316980: Configurable stock item sizes for GtkButton
+  #317079: Undo/Redo broken for GtkButton
+  #317372: Error when redoing toolbar creation
+  #317404: Setting certain stock-ids for Actions raises an exception
+  #317807: A small syntax problem
+  #317896: Selecting a recent file from the file menu list throws an...
+  #318321: Crash on 2005-10-09 00:49
+  #318351: It shouldn't be possible to add two actions with the same...
+  #318622: install on Fedora core 4 x86_64
+  #320617: Crash on 2005-11-03 15:26
+  #320798: Problem when deleting a menu/toolbar parent
+  #321621: Crash on 2005-11-16 10:41
+  #321849: app.py:982 AttributeError: 'NoneType' object has no attri...
+  #321953: widgets in a table have no row/column span settings avail...
+  #322081: Crash on 2005-11-21 22:02
+  #322336: gazpacho.desktop is not valid
+  #322458: Crash on 2005-11-25 14:30
+  #322535: Crash on 2005-11-26 23:34
+  #322923: Gazpacho crashes on MS-Windows with Python 2.4
+  #323051: placeholder.py:157 AttributeError: 'CommandManager' objec...
+  #323231: UI Manager related refactoring
+  #323305: Using removed UI widgets
+  #323478: Unremovable placeholders
+  #323773: Cannot load glade files that have Shift and Shift+Ctrl ac...
+  #324574: Crash on 2005-12-19 20:19
+  #325060: PATCH] Support Actions with short labels and 'is_importa...
+  #325828: PATCH] TypeError editing actions with no stock item set
+  #325849: Crash on clicking ... button for window title.
+
+Gazpacho-0.6.2 7-September-2005
+- Bug fixes: 313469, 313548, 313573, 313435, 313439, 313686, 314219, 314527,
+  314609, 312809, 314621, 314581, 315357
+  (Johan, Mattias, Harry Wright, Ali Afshar, Zeeshan Ali)
+- Code cleanups (Johan)
+- Refactor adaptors code and split it in several files under the base package
+  (Johan)
+- Move most of the bug reporting code from the proxy to gazpacho (Lorenzo)
+- Added lots of unittests (Johan)
+- Drag and Drop improvements (Mattias)
+- Make gazpacho a little bit more embedable-friendly (Ali Afshar, Johan)
+- Edition of custom widgets (Johan)
+- Fix BoxSizeProp (Danirl Borgmann)
+- Fix containers not showing placeholders inside them (Mattias)
+- Fix/improve several random properties (Johan)
+- HIG fixes (Johan, Mattias)
+
+Gazpacho-0.6.1 13-August-2005
+- Build fixes (Johan)
+- Translation fixes (Johan)
+
+Gazpacho-0.6.0 13-August-2005
+
+- New About dialog (Lorenzo Gil Sanchez)
+- Infrastructure for localization of glade files (Johan Dahlin)
+- Complete properties rewrite (Johan)
+- Replace WidgetClass by WidgetAdaptor (Lorenzo)
+- Use stock text for stock items in Gazpacho's menu (Johan, Christopher	Aillon,
+	 Lorenzo)
+- Drag and Drop between palette and the containers (John -J5- Palmieri)
+- Show structure of containers with border colors (Owen Taylor)
+- Load GtkAction::activate signals from the glade file (Henrique Romano)
+- Cleanup catalog files (Johan, Lorenzo)
+- Support for GtkFixed and GtkIconView (Lorenzo)
+- Lots of improvements in the Action Editor dialog (Mattias Karlsson)
+- Many new tests (Johan, Lorenzo)
+- Improved debug mode and a few useful command line options (Johan)
+- New (rock-solid) loader (Johan)
+- Only save those properties that changed, in a reliable way (Johan, Lorenzo)
+- Support for GtkArrow, GtkFontSelectionDialog and GtkColorSelectionDialog
+	(Johan)
+- Replace path.py for the much nicer environ.py (Johan)
+- More flexible loading mechanism (Johan)
+- Add reload debug menu item (Johan)
+- Add configuration file and remember last opened/saved directory and recently
+	opened projects (Johan)
+- Load files optimizations (Johan)
+- Put the xml parsing in the same place (Johan)
+- Automatic bug reporting (Lorenzo)
+- Cursor with the icon of the widget class the user is adding (Tim Evans)
+- Support for editing GObject properties (Johan)
+- Improved button edition (Lorenzo)
+- Bug fixes:
+	- #172279 Undo delete action group (Christopher)
+	- #313173 Stock icon for About item (Dan Williams)
+	- Workaround for gtk.accelerator_valid (Christopher)
+	- #313169 Undo/redo stack emits a changed signal for collapsable
+		commands (Mattias)
+	- Fix drawing selection nodes bug (Owen)
+	- #312825 Handle None values for the action attribute (Daniel Borgman)
+	- #311377 (Daniel Borgman)
+	- #310059 Placeholders inside ObjectBuilder (Mattias)
+	- #172154 Selecting entries in multiples entries (Kalle Vahlman)
+	- #309471 Add missing icon stock icon (Kalle)
+	- #309623 (Mattias)
+	- #310753 Updates for new loader API (Zeeshan Ali)
+	- #172439 Default values for label-xalign (Mattias)
+	- #308836 Added root argument to proxy (Johan)
+	- #309626 Stock list for button contents adaptor (Kalle)
+	- #308336 Undoable signal changes (Mattias)
+	- #309622 Clipboard items (Johan)
+	- Fix po files metadata (Rafael Villar Burke)
+	- Implement ObjectBuilder.signal_autoconnect (Alex Verstraeten)
+	- #308692 Default value for read_i18n_data is False not None (Johan)
+	- #308682 WidgetTreeView.remove_item return value (Johan)
+	- #302172 Mark project as changed when the signals are updated
+		(Mattias)
+	- #169592 Use tooltips for the palette (Mattias)
+	- #300767 Improve Close/Save dialogs
+	- #300772 Use get_widget instead of getattr (Travis Watkins)
+	- #169868 Update the projec ttitle (Mattias)
+	- #172172 Redo use Shift-Ctrl-Z (Mattias)
+	- #302305 Replace _ with - in signals loaded from glade file (Johan)
+	- #302305 Default lower to 0 for unsigned types (Johan)
+	- #166952 Allow deleting signal handlers (Mattias)
+	- Saving dialogs (Richard Hult)
+	- #304529 Remove draconian widget name restrictions (Lorenzo)
+	- #304654 Label sensitive in button editor (Mikael Hallendal)
+- Translations:
+	- Finnish (Kalle Vahlman)
+	- Italian (Vittorio Palmisano)
+	- Chinesse (Hashao)
+
+Gazpacho-0.5.3 9-April-2005
+	- Debug dialog for showing exceptions (Johan Dahlin)
+	- Improved translations (Rafael)
+	- More unittest and integration tests (Mattias, Lorenzo and Rafael
+	Villar Burke)
+	- New clipboard code. Now copying and pasting toolbars wors (Lorenzo)
+	- Support for C widgets (Anders Carlsson)
+	- Lots of refactoring to clean the core (Lorenzo and Anders Carlsson)
+	- Tons of usability fixes (Mattias Karlsson)
+
+Gazpacho-0.5.2 21-February-2005
+	- Minor UI bug fixes (Lorenzo, Johan)
+	- Speed optimizations (Lorenzo)
+	- Loader refactoring to allow custom widget and properties loaders
+	(Lorenzo)
+	- Big Widget refactoring to make a much saner class (Lorenzo)
+	- Better serialization for Flag/Enum properties (Lorenzo)
+	- One more test (Rafael)
+	- Fixed bugs about selecting widgets inside a Notebook (Lorenzo)
+	- Improved widgets support (Lorenzo)
+
+Gazpacho-0.5.1 13-February-2005
+	- Minor HIG improvements (Ross Burton)
+	- New translation: Catalonian (Marc Sabat)
+	- Remove the prefix attribute in the .glade file so libglade doesn't
+	complain (Lorenzo Gil)
+	- Some more widgets supported: GtkAlignment, GtkComboBoxEntry (Lorenzo)
+	- Convert MenuBars and Toolbars from Glade-2 generated .glade files
+	to the new Gazpacho files (using GtkUIManager) (Lorenzo)
+	- Many bug fixes (Lorenzo)
+	- Migration of bugtracker from Mantis to Bugzilla at bugzilla.gnome.org
+	(Lorenzo)
+
+Gazpacho-0.5.0 4-February-2005
+	- New menu/toolbar support much cleaner than the previous UIManager
+	Editor (Lorenzo Gil Sanchez)
+	- New vertical (experimental) layout (Lorenzo)
+	- Action pool, Action and ActionGroup editors (Lorenzo)
+	- A lot of code clean up that means some speed ups (Lorenzo)
+	- Better serialization and loading code: Support for <object> tags in
+	the glade file (Lorenzo)
+	- Allow to save the UI of the UIManager in the glade file or in
+	a separate file (Lorenzo)
+	- Fix a crash bug (#128) (Lorenzo)
+	- Toplevels are much easier to work with (Richard Hult)
+	- Add context menus for Boxes so you can placeholders (Richard)
+	- Allow deletion of placeholders (Richard)
+	- GtkNoteBook bug fixes (Richard)
+	- Don't ask the box size on creation (Richard)
+	- Documentation about how to add your widgets (Richard)
+	- Editor refactorization and sane support for special property
+	editors (Mikael Hallendal)
+	- Fixed .desktop file (Rafael Villar Burke)
+	- Updated translations (Rafael)
+
+Gazpacho-0.4.0 28-January-2005
+	- Better support for win32 (Lorenzo)
+	- Fix a bug about not allowing to press cancel in save
+	dialogs (Gustavo Noronha)
+	- Better support for multiple projects (Gustavo)
+	- Fixed bug in popup menu and widget tree view (Johan Dahlin)
+	- Fixed bug with path strings in win32 (Miguel Hernandez)
+	- Improved documentation in many places (Lorenzo)
+	- Clean up a lot of code and redesign some important classes (Lorenzo
+	and Johan)
+	- Fixed bug about selection code (Lorenzo)
+	- Make application gettextable (Lorenzo)
+	- Uninstall script for Linux (Lorenzo)
+	- Use a command manager and make commands more Object
+	Oriented for API sanity (Lorenzo)
+	- Debug windows: Command Stack View and Clipboard View (Lorenzo)
+	- Added a script to handle i10n: langadmin.py (Lorenzo)
+	- Fixed bugs in Undo/Redo system (Lorenzo and Richard Hult)
+	- Ask before closing a project (Gustavo Carneiro)
+	- Select Placeholders when clicking on them and also allow to select
+	their parents when Shift is pressed (Lorenzo and Richard)
+	- Copy/Cut/Paste (Lorenzo)
+	- Better window management support (Lorenzo and Richard)
+	- New Catalog approach (Mikael Hallendal)
+	- New widget registry (Johan)
+	- Better synchronization betweend properties and views (Mikael)
+	- Better support for properties and added a packing-defaults prop
+	for the widgets (Mikael)
+
+	- First translations: Spanish, Gallego, French (Rafael Villar Burke)
+	Brazilian Portuguese (Henrique Romano)
+
+Gazpacho-0.3.2 17-January-2005
+	- Lots of code cleanups. Gazpacho is PEP-8 compliant now and pychecker
+	also likes us more (Johan Dahlin)
+	- Improve Project View selection (Johan)
+	- Rearrange some widgets in the palette (Johan)
+	- Fix bug in placeholder drawing (John Ehresman)
+	- Make it more compatible with libglade (Lorenzo)
+	- Fix bugs about XML serialization (Lorenzo)
+	- Much better initialization code (Johan)
+	- Better localmode and use of FileChooser instead of
+	FileSel (Jonathan Blandford)

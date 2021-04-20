@@ -1,0 +1,8 @@
+#!/bin/bash
+set -x
+#For production:
+#/usr/bin/uwsgi --socket localhost:8000 --wsgi-file test_basic.py 
+source ../djangorc
+#$ROOTDIR/bin/debug.sh clean || true
+
+/usr/local/bin/uwsgi --http-keepalive --gevent 100 --socket localhost:8000 --wsgi-file $ROOTDIR/www-bin/dispatch.uwsgi --threads 2 --processes 4 --master --stats localhost:9001 --stats-http

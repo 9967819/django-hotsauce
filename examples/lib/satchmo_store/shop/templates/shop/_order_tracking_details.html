@@ -1,0 +1,48 @@
+{# this text is placed by the satchmo_order template tag "order_tracking_details" #}
+{% load i18n %}
+{% load satchmo_currency %}
+{% load satchmo_checkout %}
+{% load satchmo_util normalize_decimal %}
+
+<div class="orderdetails">
+<h4>{% trans 'Order #' %} {{ order.id }}</h4>
+<h4>{% trans 'Status' %}</h4>
+{% for status in order.orderstatus_set.all %}
+<p>{{status.time_stamp|date:"F jS Y H:i" }}: {{ status.status|status_label }}<br/>
+{% if status.notes %}<i>{{ status.notes }}</i>{% endif %}
+</p>
+{% endfor %}
+
+<h4>{% trans "Items Ordered" %}</h4>
+{% for item in order.orderitem_set.all %}
+{{ item }} - {{item.unit_price|currency}} x {{item.quantity|normalize_decimal}}{% if item.discount %} - {{ item.discount|currency }}{% endif %} = {{item.sub_total|currency}}<br/>
+{% endfor %}
+
+{% if order.shipping_method %}
+<h4>{% trans "Shipping Method" %}</h4>
+{{ order.shipping_description }}<br/>
+{% ifnotequal order.shipping_method order.shipping_description %}{{ order.shipping_method }}<br/>{% endifnotequal %}
+{{ order.shipping_sub_total|currency }}<br/>
+{% endif %}
+
+<h4>{% trans "Total" %}</h4>
+{% if order.discount %}
+    {% trans "Discount" %} - {{order.discount|currency}}<br/>
+{% endif %}
+{% if order.is_shippable %} {% trans "Shipping" %} + {{order.shipping_sub_total|currency}}<br/> {% endif %}
+{% if order.tax %}
+    {% trans "Tax" %} + {{order.tax|currency}}<br/>
+{% endif %}
+{% trans "Total" %} = {{order.total|currency}}<br/>
+
+{% order_payment_summary order paylink %}
+
+{% if order.is_shippable %}
+<h4>{% trans "Shipping To" %}</h4>
+{{ order.full_ship_street }}<br/>
+{{ order.ship_city }}<br/>
+{{ order.ship_state }}<br/>
+{{ order.ship_postal_code }}<br/>
+{{ order.ship_country_name|title }}<br/>
+{% endif %}
+</div>

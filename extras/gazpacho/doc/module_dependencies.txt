@@ -1,0 +1,54 @@
+In this file I'll try to explain which classes use what classes and why
+
+Classes that need the application object:
+-----------------------------------------
+
+1 SignalEditor, because it needs access to the CommandManager of the app to add
+  and remove signal handlers.
+
+  Solution: pass the application object to the SignalEditor constructor.
+
+
+2 Editor, because it is the one who create instances of  SignalEditor and it
+  needs to pass the app instance to it (see 1). Same thing with EditorProperty
+  (see 6). It also needs direct access to CommandManager to set the special
+  name property
+
+  Solution: pass the application object to the Editor constructor
+
+
+3 ProjectView, because it needs access to the Commandmanager of the app to
+  remove widgets (when the user press the 'delete' key
+
+  Solution: pass the application object to the ProjectView constructor
+
+
+4 Project, because it needs access to the CommandManager of the app to
+  remove widgets (when the user select the delete option in the popup menu
+  or press the 'delete' key when the widget in the interface is focused)
+
+  Solution: pass the application object to the Project constructor
+
+
+5 Placeholder, because when the user clicks on a placeholder usually a widget
+  needs to be created, so it needs access to the CommandManager and also to
+  the current selected palette button (add_class)
+
+  Solution: pass the application object to the placeholder constructor
+
+
+6 EditorProperty, because it needs to set the properties of the widgets and so
+  it needs access to the CommandManager of the application instance
+
+  Solution: pass the application object to the EditorProperty constructor
+
+7 Popup, because from this menu the user can execute some commands and it
+  need the CommandManager to do so.
+
+  Solution: pass the application object to the Popup constructor
+
+Note that for those objects of the same class that share the same app instance
+we could use a class variable. The reason we are not using it is that we need
+to initialize that variable in some place. If that place is main.py:launch we
+are going to need to import all that classes in main.py and circular
+dependencies probably arise

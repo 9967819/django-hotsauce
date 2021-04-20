@@ -1,0 +1,50 @@
+classname: Project
+projects:
+ - name: notmm
+   version: 0.2.12-dev
+   summary: Scalable and heterogeneous web toolkit sitting on top of on Django and others.
+   description:
+        Long description text here.
+
+ - name: notmm-schevo
+   version: 0.3.1a0
+   summary: Provides a free and experimental Schevo WSGI implementation.
+   description:
+        A fork of notmm to include support for the SchevoDurus 
+        database backend. Moreover, the WSGI interface (decorators) 
+        are used to access the live 'db' object in generic views 
+        and controllers.
+
+ - name: teatime
+   version: 1.0.2
+   summary: Makes awesome tea recipes while learning to program with Python
+   download_url: http://pypi.python.org/pypi/teatime/
+
+ - name: django.bugfixes
+   version: 0.5
+   summary: Experimental patch and injection framework for Django based on Mercurial Queues.
+
+ - name: pkg_read
+   version: 2.0
+   summary: A small utility for gathering metadata from the FreeBSD Ports Collection.
+   description:
+        Lightweight and portable ports-mgmt utility for 
+        reading metadata files from the FreeBSD Ports Collection.
+ 
+ - name: blogengine
+   version: 0.2.12
+   homepage_url: /projects/blogengine/
+   description: A fork of tm.blogs using SQLAlchemy and notmm in the background
+
+ - name: restapp
+   version: 0.2.12
+   homepage_url: /projects/restapp/
+   description: Generates HTML documents from reStructuredText documents using the docutils package.
+
+# - name: tinycms
+#   version: 0.1
+#   homepage_url: /projects/tinycms/
+#   requires: FormAlchemy
+# 
+# - name: tm_elixir
+#   version: 0.2.14

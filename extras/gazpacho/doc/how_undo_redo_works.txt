@@ -1,0 +1,25 @@
+In this document I'll try to explain how undo/redo works in Gazpacho
+
+Every action that can be undone and redone is wrapped inside a Command. This
+class has several interesting features:
+
+- Its 'execute' method can be called as many times as you want and every time
+  it is called the action is undone and redone alternatively. This means
+  a command saves its state after being executed and prepare itself to perform
+  the opposite action each time it is called. For this reason every command
+  constructor usually needs a lot of arguments so it has enough information
+  to be undone and redone every time its execute method is called.
+
+- Every time the user perform an action a command is created and Gazpacho
+  check if the last command executed was of the same kind. If so it then
+  tries to collapse the actual command with the old one. Fox example, the user
+  is editing the name of a widget. For every letter he/she changes a new
+  CommandSetName is executed and collapsed with the previous one. So when
+  the user undo this command all the letters are changed at once because they
+  are seen as one single CommandSetName command. Not all the commands can be
+  collapsed, that's what the 'unifies' method check. Also note that if there
+  any redo action pending no collapsing is done.
+
+Given this command design, each project has a command stack where all the
+commands are being pushed as they are executed. There is also a pointer (an
+integer index) which tell us what is the next redo command available.

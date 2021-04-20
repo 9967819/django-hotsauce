@@ -1,0 +1,14 @@
+Metadata-Version: 1.0
+Name: django-hotsauce
+Version: 1.2
+Summary: Scalable and heterogeneous web toolkit sitting on top of Django and others
+Homepage: https://www.isotopesoftware.ca/software/django-hotsauce/
+Author: JackBortoneLab
+Author-email: jack@isotopesoftware.ca
+License: Apache License Version 2
+Description: 
+
+ The Django-hotsauce toolkit is a experimental Python web framework based on
+ WSGI 1.0 and Django 1.0.
+
+Keywords: django-hotsauce, uwsgi, openauthkit, zodb, schevo

@@ -1,0 +1,53 @@
+# name of the current document/collection
+# index_root: packages
+
+- name: notmm
+  category: 'Web Programming'
+  version: '0.2.12.1'
+  description: Scalable and heterogeneous web toolkit sitting on top of on Django and others.
+  source: /usr/local/share/doc/notmm/reference/index.rst
+  latest: true
+
+- name: django.bugfixes
+  version: '0.5'
+  category: 'Web Programming'
+  homepage_url: /projects/django.bugfixes/0.5/
+  description: Experimental patch and injection framework for Django based on Mercurial Queues.
+ 
+- name: blogengine-sqlalchemy
+  version: '0.2.12'
+  description: A fork of tm.blogs using SQLAlchemy and notmm in the background
+  category: 'Blogging'
+
+- name: blogengine-schevo
+  version: '0.3.1a0'
+  description: BlogEngine on top of Schevo (Durus) for Python. 
+  category: 'Blogging'
+
+- name: teatime
+  version: '1.0.2'
+  homepage_url: /projects/teatime/
+  description: Makes awesome tea recipes while learning to program with Python
+  download_url: http://pypi.python.org/pypi/teatime/
+  category: 'Misc. Utility'
+
+- name: pkg_read
+  version: '2.0'
+  homepage_url: /projects/pkg_read/2.0/
+  description: A small utility for gathering metadata from the FreeBSD Ports Collection.
+  source: /usr/local/share/doc/pkg_read/index.rst
+  category: 'Ports Management'
+
+- name: restapp
+  version: '0.2.12'
+  homepage_url: /projects/restapp/
+  description: Generates HTML documents from reStructuredText documents using the docutils package.
+  category: 'Web Programming'
+
+# - name: tinycms
+#   version: 0.1
+#   homepage_url: /projects/tinycms/
+#   requires: FormAlchemy
+# 
+# - name: tm_elixir
+#   version: 0.2.14

@@ -1,0 +1,25 @@
+Before running run.py, please do:
+
+    $ sudo cp djangorc.sample /etc/djangorc
+    $ sudo vi /etc/djangorc 
+    $ sudo chmod 0640 /etc/djangorc
+    $ source /etc/djangorc
+
+If you're using GNU make, you can set PYTHON to a specific version like so:
+
+    $ make CC=llvm-gcc PYTHON=python2.5 -DWITH_DJANGO_HOME=/path/to/django
+
+In this example the path to the DJANGO_HOME is defined in
+``django/compat/django_version.h.``:
+
+ifndef DJANGO_HOME
+ define DJANGO_HOME "/path/to/django";
+endif
+
+To invoke a test script for a given collection:
+
+    $ python run.py -C "collection1,collection2,collection3"
+
+For command-line options and usage help run:
+
+    $ python ./run.py --help

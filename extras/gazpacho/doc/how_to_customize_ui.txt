@@ -1,0 +1,121 @@
+This document describes how to customize Gazpacho UI
+----------------------------------------------------
+
+Gazpacho support simple UI customizationa allowing a user to change
+two important parts of the interface:
+
+  - The widget palette can be completely customized: You can add or
+    remove widgets and groups. You can also mix widgets from different
+    catalogs in the same group.
+
+  - The widget properties can also be customized: You can change default
+    values, disable some properties or change the order in which they
+    appear in the property editor.
+
+All these customizations are defined in an XML file that we call the 
+Custom UI file and it is always named 'custom.ui'.
+ There are two possible locations where Gazpacho will look for this file:
+
+  - In the user home directory, inside the 'gazpacho' directory. In
+    Linux that would be
+      /home/user/.gazpacho/custom.ui
+    while in Windows that would be 
+      C:\Documents and Settings\user\Application Data\gazpacho\custom.ui
+
+  - In the same place where Gazpacho looks for catalog files. Usually this
+    mean '/usr/share/gazpacho/catalogs/' if Gazpacho is installed or
+    './catalogs/' when running in uninstalled mode.
+
+If a custom.ui file is found in the user home directory that will take
+preference over the second option.
+
+The Custom UI file
+------------------
+
+Let's take a look at the custom.ui file. Its format is really simple. The
+root element is 'gazpacho-custom-ui' and inside it you can put several
+'palette-group' elements
+
+<gazpacho-custom-ui>
+  <palette-group name="foo" title="My Favourite Widgets">
+
+    ... widgets go here
+
+
+Each of these palette-groups are just that, the widget groups that appear
+in your Gazpacho palette. The title attribute is used in the button for
+that group in the palette. The name attribute is not used at the moment.
+
+It's pretty obvious what kind of elements you can put inside a
+ 'palette-group' element, isn't it?
+
+
+Widgets
+-------
+
+That's right. You put 'widget' elements inside a 'palette-group' element.
+Each 'widget' element has a 'name' attribute, which is the name of the
+GType of that widget. In other words, you should put the name of that widget
+acording to the catalog XML file where that widget is defined. That should
+be the same as the string returned by the gobject.type_name(instance)
+function of the gobject module.
+
+Example:
+
+  <gazpacho-custom-ui>
+    <palette-group name="gtk-windows" title="Toplevel Widgets">
+      <widget name="GtkWindow"/>
+    </palette-group>
+  </gazpacho-custom-ui>
+
+Note that you can not change the title of the widget as it appears in
+Gazpacho palette. Let's not add confusion to widgets vocabulary.
+
+So just using the elements 'palette-group' and 'widget' you can customize
+the Gazpacho palette. You can even mix widgets from different catalogs in
+the same 'palette-group'. There is no danger on doing so since GType 
+names are guaranteed to be unique in the GObject system.
+
+But wait, there is even more you can do when customizing Gazpacho...
+
+Properties
+----------
+
+In the custom.ui file you can add elements that will affect the properties
+of your widgets in Gazpacho. You can:
+
+  - Change the default value of a property (only with basic property types)
+
+  - Disable a property if you feel you never need to edit that property
+
+  - Change the order in which the properties appear in the editor
+
+The customization of properties is really simple. You just need to add
+a 'property' element inside the apropiate 'widget' element for every property
+you want to customize. You put the property name in the 'name' attribute
+of that element. Then you add attributes to the element to accomplish
+your customization.
+
+So, if you want to
+
+  - Change the default value you will use the default attribute. Example:
+
+    <widget name="GtkDialog">
+      <property name="border-width" default="12"/>
+    </widget>
+
+  - Disable a property you will use the enabled attribute:
+
+    <widget name="GtkWindow">
+      <property name="role" enabled="False"/>
+    </widget>
+
+  - Change the priority of a property you will use the priority attribute:
+
+    <widget name="GtkWindow">
+      <property name="default-width" priority="10"/>
+    </widget>
+
+Lower values of priority means the property appears higher on the editor. No
+matter how low is the priority, the name property will always appear first.
+By default, properties have a priority of 100.

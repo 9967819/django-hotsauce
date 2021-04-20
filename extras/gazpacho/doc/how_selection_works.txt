@@ -1,0 +1,64 @@
+There are two ways the user can select a widget:
+
+  - Clicking on it directly on the Window it's located (the interface the user
+  is designing)
+
+  - Clicking on it in the WidgetTree (ProjectView)
+
+When a widget is selected 3 things usually happens:
+
+  1. A rectangle is painted on top of it with 4 small solid rectangles in the squares so there is some visual feedback for the user
+
+  2. The entry in the WidgetTree for this widget is selected
+
+  3. The Editor is updated to show this widget's properties
+
+The selected widget is stored in the Project object
+
+
+Selecting a widget from the WidgetTree (ProjectView)
+----------------------------------------------------
+When a row of the TreeView is selected the TreeViewSelection object associated
+emits the 'selection_changed' signal and the '_selection_changed_cb' method
+is called. This will tell the Project object that some widget should be
+selected by calling 'selection_set' with this widget.
+
+When this happens the Project emits the 'selection_changed' again but in
+the ProjectView it is ignored since we know that we triggered ourselves (this
+is acomplished by using an extra '_updating_selection' boolean flag)
+
+
+Selecting a widget by clicking on it
+------------------------------------
+In GTK+ not every widget can get click events (it depends on if it has a
+Gdk Window associated with it). So selecting a widget by clicking on it is
+not trivial. The algorithm (copied from Glade-3) is this one:
+
+1.- Get the events coordinates as top_x and top_y and the toplevel window of
+    the widget that got the event. Set C = toplevel
+2.- For every child of C do:
+
+    2.1.- See if we clicked on that widget comparing relative coordinates
+    
+    2.2.- If we clicked on a widget and that widget is a container 
+    Set C = this_widget and recurse to 2
+
+    2.3.- If we found any child widget that was clicked that's the selected
+    widget, otherwise take the parent container.
+
+The we call 'selection_set' on the project which handles everything else.
+
+
+What 'selection_set' does?
+--------------------------
+As you have seen both methods at the end call 'selection_set' to select the
+widget. This is what this methods does:
+
+1. - If the widget is already selected (has nodes) don't do anything
+2. - Else, clear the selection and add this widget to the selection:
+
+   2.1. - Set the nodes on the widget
+   2.2  - Emit the 'selection_changed' signal so the Editor and the WidgetTree
+   can update themselves. This signal is catched by the Application who takes
+   care of updating the editor. It's also catched by the WidgetTree who first
+   detect if it really needs to update itself.

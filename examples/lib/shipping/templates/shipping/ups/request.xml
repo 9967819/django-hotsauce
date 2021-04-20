@@ -1,0 +1,96 @@
+{% load satchmo_product %}<?xml version="1.0"?>
+<AccessRequest xml:lang="en-US">
+ 	<AccessLicenseNumber>{{config.xml_key}}</AccessLicenseNumber>
+	<UserId>{{config.userid}}</UserId>
+	<Password>{{config.password}}</Password>
+</AccessRequest>
+<?xml version="1.0"?>
+<RatingServiceSelectionRequest xml:lang="en-US">
+  <Request>
+    <TransactionReference>
+      <CustomerContext>Rating and Service</CustomerContext>
+      <XpciVersion>1.0</XpciVersion>
+    </TransactionReference>
+	<RequestAction>Rate</RequestAction>
+	<RequestOption>Shop</RequestOption>
+  </Request>
+    <PickupType>
+  	<Code>{{config.pickup}}</Code>
+  	<Description>Rate</Description>
+    </PickupType>
+  <Shipment>
+    	<Description>Rate Description</Description>
+    <Shipper>
+      <Name>{{config.shop_details.store_name}}</Name>
+      <PhoneNumber>{{shipping_phone|cut:"-"}}</PhoneNumber>
+      <ShipperNumber>{{config.account}}</ShipperNumber>
+      <Address>
+        <AddressLine1>{{shipping_address.street1}}</AddressLine1>
+        {% if address.street2 %} <AddressLine2>{{shipping_address.street2}}</AddressLine2> {% endif %}
+        <City>{{shipping_address.city}}</City>
+        <StateProvinceCode>{{shipping_address.state}}</StateProvinceCode>
+        <PostalCode>{{shipping_address.postal_code}}</PostalCode>
+        <CountryCode>{{shipping_country_code}}</CountryCode>
+      </Address>
+    </Shipper>
+    <ShipTo>
+      <CompanyName>{{contact.full_name}}</CompanyName>
+      <PhoneNumber>{{contact.primary_phone.phone|cut:"-"}}</PhoneNumber>
+      <Address>
+        <AddressLine1>{{contact.shipping_address.street1}}</AddressLine1>
+        {% if contact.shipping_address.street2 %} <AddressLine2>{{contact.shipping_address.street2}}</AddressLine2> {% endif %}
+        <City>{{contact.shipping_address.city}}</City>
+        <StateProvinceCode>{{contact.shipping_address.state}}</StateProvinceCode>
+        <PostalCode>{{contact.shipping_address.postal_code}}</PostalCode> 
+        <CountryCode>{{contact.shipping_address.country.iso2_code}}</CountryCode>
+      </Address>
+    </ShipTo>
+    <ShipFrom>
+      <CompanyName>{{config.shop_details.store_name}}</CompanyName>
+      <PhoneNumber>{{shipping_address.phone|cut:"-"}}</PhoneNumber>
+      <ShipperNumber>{{config.account}}</ShipperNumber>
+      <Address>
+        <AddressLine1>{{shipping_address.street1}}</AddressLine1>
+        {% if address.street2 %} <AddressLine2>{{shipping_address.street2}}</AddressLine2> {% endif %}
+        <City>{{shipping_address.city}}</City>
+        <StateProvinceCode>{{shipping_address.state}}</StateProvinceCode>
+        <PostalCode>{{shipping_address.postal_code}}</PostalCode>
+        <CountryCode>{{shipping_country_code}}</CountryCode>
+      </Address>
+    </ShipFrom>
+  	<PaymentInformation>
+	      	<Prepaid>
+        		<BillShipper>
+          			<AccountNumber>{{config.account}}</AccountNumber>
+        		</BillShipper>
+      		</Prepaid>
+  	</PaymentInformation>
+    {% for product in cart.get_shipment_list %}
+	<Package>
+      		<PackagingType>
+	        	<Code>{{config.container}}</Code>
+        		<Description>Customer Supplied</Description>
+      		</PackagingType>
+      		<Description>{{product.name }}</Description>
+            {% if product.has_full_dimensions %}
+            <Dimensions>
+                <UnitOfMeasurement>
+                      <Code>{{product|smart_attr:"length_units"|upper}}</Code>
+                </UnitOfMeasurement>
+                <Length>{{product|smart_attr:"length"}}</Length>
+                <Width>{{product|smart_attr:"width"}}</Width>
+                <Height>{{product|smart_attr:"height"}}</Height>
+            </Dimensions>
+            {% endif %}
+            {% if product.has_full_weight %}
+                <PackageWeight>
+                    <UnitOfMeasurement>
+                      <Code>{{product|smart_attr:"weight_units"|upper}}S</Code>
+                    </UnitOfMeasurement>
+                    <Weight>{{product|smart_attr:"weight"}}</Weight>
+                </PackageWeight>   
+            {% endif %}
+   	</Package>
+    {% endfor %}
+  </Shipment>
+</RatingServiceSelectionRequest>

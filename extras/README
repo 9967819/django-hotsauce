@@ -1,0 +1,5 @@
+Place holder directory for applications I maintain in this distribution but
+wish they were distinct packages.
+
+To install wikiapp, simply copy wikiapp to a directory in PYTHONPATH.
+

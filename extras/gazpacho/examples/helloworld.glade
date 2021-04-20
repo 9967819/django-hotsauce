@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<glade-interface>
+    <requires prefix="Gtk" lib="gtk"/>
+    <widget class="GtkWindow" id="window1">
+        <property name="visible">True</property>
+        <property name="title"></property>
+        <property name="role"></property>
+        <signal handler="on_window1__destroy" name="destroy" after="True"/>
+        <child>
+            <widget class="GtkButton" id="button1">
+                <property name="visible">True</property>
+                <property name="label">Hello World!</property>
+                <signal handler="on_button1__clicked" name="clicked" after="True"/>
+            </widget>
+        </child>
+    </widget>
+</glade-interface>

@@ -1,0 +1,34 @@
+Metadata-Version: 1.0
+Name: Elixir
+Version: 0.7.1
+Summary: Declarative Mapper for SQLAlchemy
+Home-page: http://elixir.ematia.de
+Author: Gaetan de Menten, Daniel Haus and Jonathan LaCour
+Author-email: sqlelixir@googlegroups.com
+License: MIT License
+Description: 
+        Elixir
+        ======
+        
+        A declarative layer on top of SQLAlchemy. It is a fairly thin wrapper, which
+        provides the ability to create simple Python classes that map directly to
+        relational database tables (this pattern is often referred to as the Active
+        Record design pattern), providing many of the benefits of traditional
+        databases without losing the convenience of Python objects.
+        
+        Elixir is intended to replace the ActiveMapper SQLAlchemy extension, and the
+        TurboEntity project but does not intend to replace SQLAlchemy's core features,
+        and instead focuses on providing a simpler syntax for defining model objects
+        when you do not need the full expressiveness of SQLAlchemy's manual mapper
+        definitions.
+        
+        SVN version: <http://elixir.ematia.de/svn/elixir/trunk#egg=Elixir-dev>
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Database :: Front-Ends
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

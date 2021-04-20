@@ -1,0 +1,26 @@
+export PYTHONHOME=/usr
+#export DJANGO_HOME=/home/erob/ncvs/django
+export ROOTDIR=/home/www/isotoperesearch.ca/trunk
+export BINDIR="$ROOTDIR/bin"
+export LIBDIR="$ROOTDIR/lib"
+
+export PYTHON=python
+export PYTHONPATH="$ROOTDIR:$LIBDIR:$LIBDIR/site-packages"
+export PYTHONFLAGS=
+#export PYTHONWARNINGS=always
+#export PATH="$PATH:$DJANGO_HOME/django/bin"
+export PYTHONIOENCODING="UTF-8"
+export PYTHONHASHSEED=random
+export DJANGO_SETTINGS_MODULE=local_settings
+
+#WORKON_HOME="$HOME/.virtualenvs"
+#PIP_VIRTUALENV_BASE="$WORKON_HOME"
+#PIP_RESPECT_VIRTUALENV=true
+
+# xdserver
+export XDSERVER_ROOTDIR=/var/db/durus27
+# livestore
+# export SATCHMO_ROOTDIR=/home/erob/src/livestore/trunk
+
+export SCHEVO_OPTIMIZE=1
+export SCHEVO_GTK_AVAILABLE=1

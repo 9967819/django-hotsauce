@@ -1,0 +1,86 @@
+Gazpacho 
+========
+
+Author: Lorenzo Gil Sanchez <lgs@sicem.biz>
+
+This program allows you to create the Graphical User Interface (GUI) of your
+GTK+ program in a visual way. It started as a Glade-3 clone but now it is more
+complete and featured than its ancestor. It tries to be compatible with libglade
+but it can handle some widgets that still lack support in libglade.
+
+Gazpacho is also part of Gruppy, an LGPL'ed framework and set of tools to build
+ERP-like software systems for medium and small sized companies. Nevertheless it is
+not dependent of any part of it so you can use it by its own.
+
+Gazpacho's homepage is located at:
+http://gazpacho.sicem.biz
+
+It's sourcecode is avaliable through a subversion repository at:
+http://svn.gnome.org/viewcvs/gazpacho/trunk/
+
+If you have any enhancements or bug reports, please fill them in GNOME
+bugzilla:
+
+http://bugzilla.gnome.org
+
+Please select the product name Gazpacho
+
+
+Requirements
+============
+Gazpacho has the following dependencies:
+
+Python 2.3 or higher
+PyGTK 2.6.0 or higher
+kiwi 1.9.6 or higher
+Twisted 1.3.0 (optional, for development)
+
+Running Gazpacho
+================
+To run Gazpacho you can either run it from the download directory or you can
+install it into your prefix.
+
+If you don't want to install it just type:
+
+[lgs@localhost gazpacho]$ bin/gazpacho
+
+Note that you will probably need to set your PYTHONPATH if your system does not
+have pygtk 2.4.0 in the default python site-packages directory.
+
+If you want to install Gazpacho just type:
+[lgs@localhost gazpacho]$ python setup.py install --prefix=yourprefix
+
+Note that you will need write permissions in 'yourprefix'
+
+Then to run gazpacho:
+[lgs@localhost]$ gazpacho
+
+Note that your path will need to containe 'yourprefix/bin'
+
+
+New Versions
+============
+
+New versions of Gazpacho can be found at:
+
+http://ftp.gnome.org/pub/GNOME/sources/gazpacho/
+
+
+Mailing list
+============
+
+There is a mailing list for Gazpacho. You can subscribe to it through the web
+interface at:
+
+http://www.sicem.biz/mailman/listinfo/gazpacho
+
+
+Copyright Information
+=====================
+                                                                               
+This software is covered by the GNU Lesser General Public License
+(version 2.0, or if you choose, a later version).  Basically just don't
+say you wrote bits you didn't.
+
+
+

@@ -1,0 +1,998 @@
+# translation of gl.po to Galego
+# Gazpacho. The GUI Designer.
+# Copyright (C) 2005 Lorenzo Gil Sánchez
+# This file is distributed under the same license as the Gazpacho package.
+#
+# Rafael Villar Burke <pachi@mmn-arquitectos.com>, 2005.
+# Ignacio Casal Quinteiro <icq@cvs.gnome.org>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: gl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-07-29 09:58+0200\n"
+"PO-Revision-Date: 2007-03-17 14:20+0100\n"
+"Last-Translator: Ignacio Casal Quinteiro <icq@cvs.gnome.org>\n"
+"Language-Team: Galego <trasno@ceu.fi.udc.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../gazpacho/actioneditor.py:306
+msgid "Edit Action"
+msgstr "Editar acción"
+
+#: ../gazpacho/actioneditor.py:309
+msgid "Add Action"
+msgstr "Engadir acción"
+
+#: ../gazpacho/actioneditor.py:353
+msgid "_Label"
+msgstr "_Etiqueta"
+
+# TODO: shortcut
+#: ../gazpacho/actioneditor.py:362
+msgid "S_hort Label"
+msgstr "E_tiqueta breve"
+
+#: ../gazpacho/actioneditor.py:371
+#, fuzzy
+msgid "_Stock"
+msgstr "Icona e_stándar"
+
+#: ../gazpacho/actioneditor.py:384
+msgid "I_mportant"
+msgstr "I_mportante"
+
+# TODO: shortcut
+#: ../gazpacho/actioneditor.py:392
+msgid "Accele_rator"
+msgstr "_Atallo de teclado"
+
+#: ../gazpacho/actioneditor.py:411
+msgid "_Tooltip"
+msgstr "Pis_ta"
+
+#: ../gazpacho/actioneditor.py:420
+msgid "Call_back"
+msgstr "_Retrochamada"
+
+# TODO: shortcut
+#: ../gazpacho/actioneditor.py:502
+msgid "_Clear"
+msgstr "_Limpar"
+
+#: ../gazpacho/actioneditor.py:617
+msgid "Add Action Group"
+msgstr "Engadir grupo de accións"
+
+#: ../gazpacho/actioneditor.py:620
+msgid "Edit Action Group"
+msgstr "Editar grupo de accións"
+
+#: ../gazpacho/actioneditor.py:634
+msgid "_Id"
+msgstr "_Id"
+
+#: ../gazpacho/actioneditor.py:679
+#, python-format
+msgid "Add action %s"
+msgstr "Engadir acción %s"
+
+#: ../gazpacho/actioneditor.py:681
+#, python-format
+msgid "Remove action %s"
+msgstr "Eliminar acción %s"
+
+#: ../gazpacho/actioneditor.py:698
+#, python-format
+msgid "Edit action %s"
+msgstr "Editar a acción %s"
+
+#: ../gazpacho/actioneditor.py:731
+#, python-format
+msgid "Add action group %s"
+msgstr "Engadir grupo de accións %s"
+
+#: ../gazpacho/actioneditor.py:733
+#, python-format
+msgid "Remove action group %s"
+msgstr "Eliminar grupo de accións %s"
+
+#: ../gazpacho/actioneditor.py:754
+#, python-format
+msgid "Edit action group %s"
+msgstr "Editar grupo de accións %s"
+
+#: ../gazpacho/model.py:335
+msgid "Model editor"
+msgstr "Editor de modelo"
+
+#: ../gazpacho/model.py:343
+msgid "Data"
+msgstr "Datos"
+
+#: ../gazpacho/model.py:347
+msgid "Types"
+msgstr "Tipos"
+
+#: ../gazpacho/model.py:355
+msgid "Create model from widget"
+msgstr ""
+
+#: ../gazpacho/model.py:369
+msgid "Custom model"
+msgstr "Modelo personalizado"
+
+#. right alignment
+#: ../gazpacho/model.py:383
+msgid "Index"
+msgstr "Índice"
+
+#: ../gazpacho/model.py:387
+msgid "Type"
+msgstr "Tipo"
+
+#: ../gazpacho/model.py:415
+msgid "Allow hierarchical data"
+msgstr "Permitir datos xerárquicos"
+
+#: ../gazpacho/model.py:448
+msgid "Click on a cell to edit its contents"
+msgstr "Perma na cela para editar os contidos"
+
+#: ../gazpacho/properties.py:1115
+#, python-format
+msgid "Setting %s of %s"
+msgstr "Configurando %s de %s"
+
+#: ../gazpacho/popup.py:151
+msgid "Select"
+msgstr "Seleccionar"
+
+#: ../gazpacho/popup.py:169 ../gazpacho/widgets/base/box.py:417
+msgid "Insert before"
+msgstr "Inserir antes"
+
+#: ../gazpacho/popup.py:172 ../gazpacho/widgets/base/box.py:414
+msgid "Insert after"
+msgstr "Inserir despois"
+
+#: ../gazpacho/popup.py:175
+#, fuzzy
+msgid "Insert row before"
+msgstr "Inserir antes"
+
+#: ../gazpacho/popup.py:177
+#, fuzzy
+msgid "Insert row after "
+msgstr "Inserir despois"
+
+#: ../gazpacho/popup.py:179
+#, fuzzy
+msgid "Insert column before"
+msgstr "Inserir antes"
+
+#: ../gazpacho/popup.py:181
+#, fuzzy
+msgid "Insert column after "
+msgstr "Inserir despois"
+
+#: ../gazpacho/stockicons.py:192
+msgid "Stock Icons"
+msgstr ""
+
+#: ../gazpacho/sizegroupeditor.py:520
+msgid "Cannot add the widget"
+msgstr "Non é posible engadir o widget"
+
+#: ../gazpacho/sizegroupeditor.py:521
+msgid ""
+"It's not possible to add a gadget who has an ancestor or child in the "
+"sizegroup."
+msgstr ""
+"Non é posible engadir un gadget que ten un ancestro ou fillo no grupo de "
+"tamaño."
+
+#: ../gazpacho/sizegroupeditor.py:546
+msgid "Add Size Group Widgets"
+msgstr "Engadir Widgets grupo de tamaño"
+
+#: ../gazpacho/sizegroupeditor.py:628
+msgid "Existing size group:"
+msgstr "Grupos de tamaño existentes:"
+
+#: ../gazpacho/sizegroupeditor.py:636
+msgid "New size group:"
+msgstr "Novo grupo de tamaño:"
+
+#: ../gazpacho/sizegroupeditor.py:728
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: ../gazpacho/sizegroupeditor.py:729
+msgid "Vertical"
+msgstr "Vertical"
+
+#: ../gazpacho/sizegroupeditor.py:730
+msgid "Both"
+msgstr "Ambos"
+
+#: ../gazpacho/sizegroupeditor.py:825
+#, python-format
+msgid "Add widgets to size group '%s'"
+msgstr "Engadir widgets ó grupo de accións '%s'"
+
+#: ../gazpacho/sizegroupeditor.py:827
+#, python-format
+msgid "Remove widgets from size group '%s'"
+msgstr "Eliminar widgets do grupo de tamaño '%s'"
+
+#: ../gazpacho/uieditor.py:48
+#, python-format
+msgid "Editing menubar %s"
+msgstr "Edición da barra de menú %s"
+
+#: ../gazpacho/uieditor.py:51
+#, python-format
+msgid "Editing toolbar %s"
+msgstr "Edición da barra de ferramentas %s"
+
+#: ../gazpacho/uieditor.py:54
+msgid "UIEditor is only for toolbars and menubars"
+msgstr "UIEditor somentes pode usarse con barras de ferramentas e de menús "
+
+#: ../gazpacho/uieditor.py:118
+msgid "Press Escape to unselected an item"
+msgstr "Prema Escape para deseleccionar un elemento"
+
+#: ../gazpacho/uieditor.py:308
+msgid "Choose an action"
+msgstr "Seleccionar unha acción"
+
+#: ../gazpacho/uieditor.py:348
+msgid "Adding a menu"
+msgstr "Engadindo un menú"
+
+#: ../gazpacho/uieditor.py:365 ../gazpacho/app/uimstate.py:305
+msgid "Action"
+msgstr "Acción"
+
+#: ../gazpacho/uieditor.py:367
+msgid "Separator"
+msgstr "Separador"
+
+#: ../gazpacho/uieditor.py:375
+msgid "Adding a toolitem"
+msgstr "Engadindo un elemento de pistas"
+
+#: ../gazpacho/uieditor.py:395
+msgid "Adding a menuitem"
+msgstr "Engadindo un elemento de menú"
+
+#: ../gazpacho/uieditor.py:407
+msgid "Edit UI definitions"
+msgstr "Editar definicións da IU"
+
+#: ../gazpacho/propertyeditor.py:351
+msgid "Edit Text Property"
+msgstr "Editar propiedade de texto"
+
+#: ../gazpacho/propertyeditor.py:365
+msgid "_Text:"
+msgstr "_Texto:"
+
+#: ../gazpacho/propertyeditor.py:396
+msgid "T_ranslatable"
+msgstr "T_raducible"
+
+#: ../gazpacho/propertyeditor.py:401
+msgid "_Has context prefix"
+msgstr "_Ten prefixo de contido"
+
+#: ../gazpacho/propertyeditor.py:408
+msgid "Co_mments for translators:"
+msgstr "Co_mentarios para os tradutores:"
+
+#: ../gazpacho/propertyeditor.py:602
+msgid "No"
+msgstr "Non"
+
+#: ../gazpacho/propertyeditor.py:789
+msgid "Edit..."
+msgstr "Editar..."
+
+#: ../gazpacho/propertyeditor.py:817
+msgid "There is already a widget with this name"
+msgstr "Xa existe un widget con ese nome"
+
+#: ../gazpacho/propertyeditor.py:818
+msgid "The widget must have a name"
+msgstr "O widget ten que ter un nome"
+
+#. Class
+#: ../gazpacho/propertyeditor.py:922
+msgid "Class"
+msgstr "Clase"
+
+#. The editor has (at this moment) four tabs this are pointers to the
+#. vboxes inside each tab.
+#: ../gazpacho/propertyeditor.py:943
+msgid "Widget"
+msgstr "Control"
+
+#: ../gazpacho/propertyeditor.py:944
+msgid "Packing"
+msgstr "Empaquetado"
+
+#: ../gazpacho/propertyeditor.py:945
+msgid "Common"
+msgstr "Comúns"
+
+#: ../gazpacho/propertyeditor.py:946
+msgid "Signals"
+msgstr "Sinais"
+
+#: ../gazpacho/main.py:222
+msgid "Turn on profiling support"
+msgstr "Activar o soporte de perfilado"
+
+#: ../gazpacho/main.py:226
+msgid "Turn on pdb debugging support"
+msgstr "Activar o soporte de depuración con pdb"
+
+#: ../gazpacho/main.py:230
+msgid "Batch command"
+msgstr "Proceso por lotes"
+
+#: ../gazpacho/main.py:234
+msgid "Load glade file and save it"
+msgstr "Cargar ficheiro glade e gardarlo"
+
+#: ../gazpacho/main.py:238
+msgid "Start up a console"
+msgstr "Iniciar unha consola"
+
+#: ../gazpacho/main.py:242
+msgid "Only open and display the interface"
+msgstr "Somentes abrir e mostrar a interface"
+
+#: ../gazpacho/command.py:158
+#, python-format
+msgid "Create %s"
+msgstr "Creación de %s"
+
+#: ../gazpacho/command.py:160
+#, python-format
+msgid "Delete %s"
+msgstr "Eliminar %s"
+
+#: ../gazpacho/signaleditor.py:95
+msgid "<Type the signal's handler here>"
+msgstr "<Escriba aquí o nome do xestor de sinal>"
+
+#: ../gazpacho/signaleditor.py:141
+msgid "Signal"
+msgstr "Sinal"
+
+#: ../gazpacho/signaleditor.py:150
+msgid "Handler"
+msgstr "Xestor de sinal"
+
+#: ../gazpacho/signaleditor.py:160
+msgid "After"
+msgstr "Posterior"
+
+#: ../gazpacho/signaleditor.py:168
+msgid "Object"
+msgstr "Obxecto"
+
+#: ../gazpacho/signaleditor.py:487
+#, python-format
+msgid "Add signal handler %s"
+msgstr "Engadir o xestor de sinal %s"
+
+#: ../gazpacho/signaleditor.py:489
+#, python-format
+msgid "Remove signal handler %s"
+msgstr "Eliminación do xestor de sinal %s"
+
+#: ../gazpacho/signaleditor.py:506
+#, python-format
+msgid "Change signal handler for signal \"%s\""
+msgstr "Cambiar o xestor para o sinal \"%s\""
+
+#: ../gazpacho/dndhandlers.py:846
+#, python-format
+msgid "Drag and Drop widget %s"
+msgstr "Arrastrar e soltar o widget %s"
+
+#. A label which contains the name of the class currently selected or
+#. "Selector" if no widget class is selected
+#: ../gazpacho/palette.py:132 ../gazpacho/palette.py:154
+msgid "Selector"
+msgstr "Selector"
+
+#: ../gazpacho/clipboard.py:211
+msgid "Clipboard Contents"
+msgstr "Contidos do portapapeis"
+
+#: ../gazpacho/clipboard.py:323
+#, python-format
+msgid "Cut widget %s into the clipboard"
+msgstr "Cortar widget %s no portapapeis"
+
+#: ../gazpacho/clipboard.py:325
+#, python-format
+msgid "Paste widget %s from the clipboard"
+msgstr "Pegar widget %s dende o portapapeis"
+
+#: ../gazpacho/plugins.py:87
+msgid "No description available"
+msgstr "Sen descrición dispoñible"
+
+#: ../gazpacho/plugins.py:89
+msgid "No author available"
+msgstr "Sen autor dispoñible"
+
+#: ../gazpacho/plugins.py:91
+msgid "No version available"
+msgstr "Sen versión dispoñible"
+
+#: ../gazpacho/widgets/base/button.py:115
+#, python-format
+msgid "Setting button %s contents"
+msgstr "Configurando os contidos do botón %s"
+
+# TODO: shortcut
+#: ../gazpacho/widgets/base/button.py:245
+msgid "Label:"
+msgstr "Etiqueta:"
+
+#: ../gazpacho/widgets/base/button.py:254
+msgid "Image:"
+msgstr "Imaxe:"
+
+#: ../gazpacho/widgets/base/button.py:269
+msgid "Left"
+msgstr "Esquerda"
+
+#: ../gazpacho/widgets/base/button.py:270
+msgid "Right"
+msgstr "Dereita"
+
+#: ../gazpacho/widgets/base/button.py:271
+msgid "Top"
+msgstr "Enriba"
+
+#: ../gazpacho/widgets/base/button.py:272
+msgid "Bottom"
+msgstr "Embaixo"
+
+#: ../gazpacho/widgets/base/button.py:300
+msgid "No text"
+msgstr "Sen texto"
+
+#: ../gazpacho/widgets/base/button.py:304
+msgid "Icon size:"
+msgstr "Tamaño de icona:"
+
+#. widgets to setup a custom button
+#: ../gazpacho/widgets/base/button.py:350
+msgid "Use custom button:"
+msgstr "Usar botón personalizado:"
+
+#: ../gazpacho/widgets/base/button.py:358
+msgid "Use stock button:"
+msgstr ""
+
+#: ../gazpacho/widgets/base/button.py:437
+msgid "Open image ..."
+msgstr "Abrir imaxe ..."
+
+#: ../gazpacho/widgets/base/bars.py:31
+msgid "Edit UI Definition..."
+msgstr "Editar definición da IU..."
+
+#: ../gazpacho/widgets/base/table.py:323
+#, python-format
+msgid "Moving widget to x position %d"
+msgstr "Movendo widget á posición x %d"
+
+#: ../gazpacho/widgets/base/table.py:360
+#, python-format
+msgid "Moving widget to y position %d"
+msgstr "Movendo widget á posición y %d"
+
+#: ../gazpacho/widgets/base/treeview.py:194
+msgid "Edit Model..."
+msgstr "Editar modelo..."
+
+#: ../gazpacho/widgets/base/treeview.py:239
+msgid "Layout style"
+msgstr "Estilo de distribución"
+
+#: ../gazpacho/widgets/base/treeview.py:248
+msgid "Text only"
+msgstr "Só texto"
+
+#: ../gazpacho/widgets/base/treeview.py:256
+msgid "Image and text"
+msgstr "Imaxe e texto"
+
+#: ../gazpacho/widgets/base/treeview.py:267
+msgid "Check and text"
+msgstr ""
+
+#: ../gazpacho/widgets/base/treeview.py:276
+msgid "Custom"
+msgstr "Personalizado"
+
+#: ../gazpacho/widgets/base/treeview.py:308
+msgid "New layout"
+msgstr "Nova distribución"
+
+#: ../gazpacho/widgets/base/treeview.py:316
+msgid "Title"
+msgstr "Título"
+
+#: ../gazpacho/widgets/base/treeview.py:407
+#, python-format
+msgid "Add column to tree view '%s'"
+msgstr ""
+
+#: ../gazpacho/widgets/base/treeview.py:409
+#, python-format
+msgid "Remove column '%s' from tree view '%s'"
+msgstr ""
+
+#: ../gazpacho/widgets/base/treeview.py:657
+msgid "Edit Layout Definition..."
+msgstr "Editar definición de distribución..."
+
+#: ../gazpacho/widgets/base/box.py:152
+msgid "Drag - append"
+msgstr "Arrastrar - engadir"
+
+#: ../gazpacho/widgets/base/box.py:199 ../gazpacho/widgets/base/box.py:388
+msgid "Create - extend"
+msgstr "Crear - estender"
+
+#: ../gazpacho/widgets/base/box.py:340
+msgid "Drag - extend"
+msgstr "Arrastrar - estender"
+
+#: ../gazpacho/widgets/base/box.py:439
+msgid "Delete placeholder"
+msgstr "Eliminar colector"
+
+#: ../gazpacho/widgets/base/menueditor/widgets.py:2413
+msgid "Click to create menu"
+msgstr "Prema para crear o menú"
+
+#: ../gazpacho/widgets/base/menueditor/widgets.py:2427
+msgid "New Menu"
+msgstr "Novo menú"
+
+#: ../gazpacho/widgets/base/menueditor/widgets.py:2434
+#: ../gazpacho/widgets/base/menueditor/widgets.py:2467
+msgid "There is no action group to add this action to"
+msgstr ""
+
+#: ../gazpacho/widgets/base/menueditor/widgets.py:2448
+msgid "Click to create action"
+msgstr "Prema para crear a acción"
+
+#: ../gazpacho/widgets/base/menueditor/widgets.py:2462
+msgid "New Action"
+msgstr "Nova acción"
+
+#: ../gazpacho/widgets/base/menueditor/contextmenu.py:157
+msgid "Start new group"
+msgstr "Iniciar novo grupo"
+
+#. let the user remove the submenu
+#: ../gazpacho/widgets/base/menueditor/contextmenu.py:165
+msgid "Remove submenu"
+msgstr "Eliminar submenú"
+
+#. or add a new one
+#: ../gazpacho/widgets/base/menueditor/contextmenu.py:169
+msgid "Add submenu"
+msgstr "Engadir submenú"
+
+#. Let the user set a stock image
+#: ../gazpacho/widgets/base/menueditor/contextmenu.py:177
+msgid "Set image"
+msgstr "Establecer imaxe"
+
+#: ../gazpacho/app/bugreportdialog.py:38
+msgid "What were you doing before the error occured?"
+msgstr "Que estaba a facer antes do erro?"
+
+#: ../gazpacho/app/bugreportdialog.py:48
+msgid "Personal information (optional)"
+msgstr "Información persoal (optativa)"
+
+#: ../gazpacho/app/bugreportdialog.py:54 ../glade/preferences.glade.h:2
+msgid "Name"
+msgstr "Nome"
+
+#: ../gazpacho/app/bugreportdialog.py:57
+msgid "E-Mail"
+msgstr "Correo-e"
+
+#: ../gazpacho/app/dialogs.py:31
+msgid "Close _without Saving"
+msgstr "P_echar sen gardar"
+
+#: ../gazpacho/app/dialogs.py:69
+#, python-format
+msgid "Save changes to project \"%s\" before closing?"
+msgstr "Gardar os cambios ó proxecto \"%s\" antes de pechar?"
+
+#: ../gazpacho/app/dialogs.py:71 ../gazpacho/app/dialogs.py:102
+msgid "Your changes will be lost if you don't save them."
+msgstr "Os cambios vanse perder se non se gardan."
+
+#: ../gazpacho/app/dialogs.py:111
+msgid "S_elect the projects you want to save:"
+msgstr "S_eleccione os proxectos que desexa gardar:"
+
+#: ../gazpacho/app/dialogs.py:197
+msgid "Unsupported widgets"
+msgstr "Widgets non soportados"
+
+#: ../gazpacho/app/dialogs.py:202
+msgid ""
+"The following widgets could not be loaded. Please note that if you save this "
+"file these widgets will be lost."
+msgstr ""
+
+#. File menu
+#: ../gazpacho/app/app.py:133
+msgid "_File"
+msgstr "_Ficheiro"
+
+#: ../gazpacho/app/app.py:135
+msgid "New Project"
+msgstr "Novo proxecto"
+
+#: ../gazpacho/app/app.py:137
+msgid "Open Project"
+msgstr "Abrir proxecto"
+
+#: ../gazpacho/app/app.py:139
+msgid "Quit"
+msgstr "Saír"
+
+#. Edit menu
+#: ../gazpacho/app/app.py:142
+msgid "_Edit"
+msgstr "_Editar"
+
+#: ../gazpacho/app/app.py:144
+msgid "Open the preferences dialog"
+msgstr "Abrir o diálogo de preferencias"
+
+#. Object menu
+#: ../gazpacho/app/app.py:147
+msgid "_Objects"
+msgstr "_Obxectos"
+
+#. Project menu
+#: ../gazpacho/app/app.py:150
+msgid "_Project"
+msgstr "_Proxecto"
+
+#: ../gazpacho/app/app.py:151
+msgid "_Properties"
+msgstr "_Propiedades"
+
+#: ../gazpacho/app/app.py:152 ../gazpacho/app/app.py:1109
+msgid "Project properties"
+msgstr "Propiedades do proxecto"
+
+#. (projects..)
+#. Debug menu
+#: ../gazpacho/app/app.py:157
+msgid "_Debug"
+msgstr "_Depurar"
+
+#: ../gazpacho/app/app.py:158
+msgid "Dump data"
+msgstr "Volcar datos"
+
+#: ../gazpacho/app/app.py:159
+msgid "Dump debug data"
+msgstr "Volcar datos de depuración"
+
+#: ../gazpacho/app/app.py:160
+msgid "Preview"
+msgstr "Previsualización"
+
+#: ../gazpacho/app/app.py:161
+msgid "Preview current window"
+msgstr "Previsualizar a fiestra actual"
+
+#. Help menu
+#: ../gazpacho/app/app.py:164
+msgid "_Help"
+msgstr "A_xuda"
+
+#: ../gazpacho/app/app.py:165
+msgid "About Gazpacho"
+msgstr "Acerca de Gazpacho"
+
+#: ../gazpacho/app/app.py:172
+msgid "Show _structure"
+msgstr "Mostrar e_strutura"
+
+#: ../gazpacho/app/app.py:173
+msgid "Show container structure"
+msgstr "Mostrar a estrutura de colectores"
+
+#: ../gazpacho/app/app.py:174
+msgid "Show _command stack"
+msgstr "Ver pila de _comandos"
+
+#: ../gazpacho/app/app.py:175
+msgid "Show the command stack"
+msgstr "Ver a pila de comandos"
+
+#: ../gazpacho/app/app.py:176
+msgid "Show _clipboard"
+msgstr "Amosar _portapapeis"
+
+#: ../gazpacho/app/app.py:177
+msgid "Show the clipboard"
+msgstr "Amosar o portapapeis"
+
+# TODO: atallo
+#: ../gazpacho/app/app.py:178
+msgid "Show _workspace"
+msgstr "Mostrar espazo de _traballo"
+
+#: ../gazpacho/app/app.py:179
+msgid "Show container workspace"
+msgstr "Mostrar o espazo de traballo de colectores"
+
+#: ../gazpacho/app/app.py:187
+msgid "Save Project"
+msgstr "Gardar proxecto"
+
+#: ../gazpacho/app/app.py:188
+msgid "Save _As..."
+msgstr "Gardar _como..."
+
+#: ../gazpacho/app/app.py:189
+msgid "Save project with different name"
+msgstr "Gardar proxecto con outro nome"
+
+#: ../gazpacho/app/app.py:191
+msgid "Close Project"
+msgstr "Pechar proxecto"
+
+#: ../gazpacho/app/app.py:194
+msgid "Undo last action"
+msgstr "Desfacer a derradeira acción"
+
+#: ../gazpacho/app/app.py:196
+msgid "Redo last action"
+msgstr "Refacer a derradeira acción"
+
+#: ../gazpacho/app/app.py:203 ../gazpacho/app/uimstate.py:595
+msgid "Cut"
+msgstr "Cortar"
+
+#: ../gazpacho/app/app.py:205 ../gazpacho/app/uimstate.py:596
+msgid "Copy"
+msgstr "Copiar"
+
+#: ../gazpacho/app/app.py:207 ../gazpacho/app/uimstate.py:597
+msgid "Paste"
+msgstr "Pegar"
+
+#: ../gazpacho/app/app.py:209 ../gazpacho/app/uimstate.py:298
+#: ../gazpacho/app/uimstate.py:464 ../gazpacho/app/uimstate.py:599
+msgid "Delete"
+msgstr "Borrar"
+
+#: ../gazpacho/app/app.py:250
+msgid "Widgets"
+msgstr "Widgets"
+
+#: ../gazpacho/app/app.py:260
+msgid "Actions"
+msgstr "Accións"
+
+#: ../gazpacho/app/app.py:270
+msgid "Size Groups"
+msgstr "Grupos de tamaño"
+
+#: ../gazpacho/app/app.py:378
+#, python-format
+msgid "\"%s\" is already open."
+msgstr "\"%s\" xa está aberto."
+
+#: ../gazpacho/app/app.py:379
+msgid ""
+"Do you wish to revert your changes and re-open the glade file? Your changes "
+"will be permanently lost if you choose to revert."
+msgstr ""
+"Desexa revertir os cambios e voltar a cargar o ficheiro glade? Os cambios "
+"vanse perder definitivamente se non se decide a revertir."
+
+#: ../gazpacho/app/app.py:534
+#, python-format
+msgid "Could not save project \"%s\""
+msgstr "Non se puido gardar o proxecto \"%s\""
+
+#: ../gazpacho/app/app.py:535
+#, python-format
+msgid "Project \"%s\" could not be saved to %s. Permission denied."
+msgstr "Non se puido gardar o proxecto \"%s\" en %s. Permiso denegado."
+
+#: ../gazpacho/app/app.py:546 ../gazpacho/app/app.py:613
+#: ../gazpacho/app/app.py:1051
+msgid "Save as"
+msgstr "Gardar como"
+
+#: ../gazpacho/app/app.py:669
+#, python-format
+msgid "Untitled %d"
+msgstr "Sen título %d"
+
+#. self._update_recent_items()
+#: ../gazpacho/app/app.py:715 ../gazpacho/app/app.py:727
+msgid "The project could not be loaded"
+msgstr "Non foi posible cargar o proxecto"
+
+#: ../gazpacho/app/app.py:716
+#, python-format
+msgid "An error occurred while parsing the file \"%s\"."
+msgstr "Ocorreu un erro mentras se interpretaba o ficheiro\"%s.\"."
+
+#: ../gazpacho/app/app.py:728
+#, python-format
+msgid "The file \"%s\" could not be opened"
+msgstr "Non se puido abrir o ficheiro \"%s\""
+
+#: ../gazpacho/app/app.py:803
+msgid "There is a widget with an empty name"
+msgstr "Hai un widget con nome baleiro"
+
+#: ../gazpacho/app/app.py:811
+#, python-format
+msgid "The name \"%s\" is used in more than one widget"
+msgstr "O nome \"%s\" úsase en máis dun widget"
+
+#: ../gazpacho/app/app.py:976
+msgid "Command Stack"
+msgstr "Pila de comandos"
+
+#. we were called from the _save_cb callback
+#: ../gazpacho/app/app.py:1049
+msgid "Save"
+msgstr "Gardar"
+
+#: ../gazpacho/app/app.py:1118
+msgid "_Translation domain:"
+msgstr "Dominio de _tradución:"
+
+#: ../gazpacho/app/app.py:1133
+#, python-format
+msgid "Set domain to %s"
+msgstr "Establecer o dominio a %s"
+
+#: ../gazpacho/app/uimstate.py:156 ../gazpacho/app/uimstate.py:159
+msgid "Nothing"
+msgstr "Nada"
+
+#: ../gazpacho/app/uimstate.py:162
+#, python-format
+msgid "_Undo: %s"
+msgstr "_Desfacer: %s"
+
+#: ../gazpacho/app/uimstate.py:163
+msgid "_Undo"
+msgstr "_Desfacer"
+
+#: ../gazpacho/app/uimstate.py:166
+#, python-format
+msgid "_Redo: %s"
+msgstr "_Refacer: %s"
+
+#: ../gazpacho/app/uimstate.py:167
+msgid "_Redo"
+msgstr "_Refacer"
+
+#: ../gazpacho/app/uimstate.py:301
+msgid "_Add Action..."
+msgstr "Engadir _acción..."
+
+#: ../gazpacho/app/uimstate.py:302
+msgid "Add an action"
+msgstr "Engadir unha acción"
+
+#: ../gazpacho/app/uimstate.py:309
+msgid "Add Action _Group..."
+msgstr "Engadir _grupo de accións..."
+
+#: ../gazpacho/app/uimstate.py:310
+msgid "Add an action group"
+msgstr "Engadir un grupo de accións"
+
+#: ../gazpacho/app/uimstate.py:313
+msgid "Action Group"
+msgstr "Grupo de accións"
+
+#: ../gazpacho/app/uimstate.py:317
+msgid "_Edit..."
+msgstr "_Editar..."
+
+#: ../gazpacho/app/uimstate.py:318
+msgid "Edit selected action or action group"
+msgstr "Editar acción ou grupo de accións seleccionado"
+
+#: ../gazpacho/app/uimstate.py:321
+msgid "Edit"
+msgstr "Editar"
+
+# TODO: shortcut
+#: ../gazpacho/app/uimstate.py:605
+msgid "Add Size Group _Widgets"
+msgstr "Engadir Widgets grupo de tamaño"
+
+#: ../gazpacho/app/uimstate.py:606
+msgid "Add the selected widgets to a size group"
+msgstr "Engadir os widgets seleccionados a un grupo de tamaño"
+
+#: ../gazpacho/app/uimstate.py:609
+msgid "Group"
+msgstr "Grupo"
+
+# TODO: shortcut
+#: ../gazpacho/app/debugwindow.py:37
+msgid "Send _Bugreport..."
+msgstr "Enviar in_forme de erros..."
+
+#: ../gazpacho/app/debugwindow.py:41
+msgid "_Save Project"
+msgstr "_Gardar Proxecto"
+
+#: ../gazpacho/app/debugwindow.py:46
+msgid "_Continue"
+msgstr ""
+
+#: ../gazpacho/loader/compat.py:185
+msgid "Deprecated widgets found"
+msgstr "Atopáronse widgets obsoletos"
+
+#: ../gazpacho/loader/compat.py:195
+msgid "Gazpacho found the following deprecated widgets:"
+msgstr "Gazpacho atopou os seguintes widgets obsoletos:"
+
+#: ../gazpacho/loader/compat.py:204
+msgid ""
+"They were converted to the equivalent newest widgets but please note that "
+"if\n"
+"you save the file in Gazpacho it will not be compatible with Glade-2 anymore"
+msgstr ""
+"Convertéronse nos widgets novos equivalentes, pero teña en conta que se\n"
+"garda o ficheiro dende Gazpacho, este xa non será máis compatible co Glade-2"
+
+#: ../glade/preferences.glade.h:1
+msgid "Activated"
+msgstr "Activado"
+
+#: ../glade/preferences.glade.h:3
+msgid "Plugins"
+msgstr "Complementos"
+
+#: ../glade/preferences.glade.h:4
+msgid "Preferences"
+msgstr "Preferencias"
+
+#~ msgid "_Quit Gazpacho"
+#~ msgstr "_Saír de Gazpacho"

@@ -1,0 +1,18 @@
+#!/bin/sh
+# source this file with bash for instant Django
+# usage: source ./djangorc
+# hack hack hack ...
+
+#Path to a custom Django installation
+#DJANGO_HOME=/usr/local/share/django
+#if test -x $DJANGO_HOME; then
+# echo "Found DJANGO_HOME, good."
+#else
+# echo "Please consider setting the \'DJANGO_HOME\' variable." 
+#fi
+
+ROOTDIR=`cd -P -- "$(dirname -- "$0")/" && pwd -P`
+PYTHONPATH="$ROOTDIR:$ROOTDIR/lib:$ROOTDIR/lib/site-packages"
+PYTHONIOENCODING=UTF-8
+DJANGO_SETTINGS_MODULE=local_settings
+export ROOTDIR PYTHONPATH DJANGO_SETTINGS_MODULE

@@ -1,0 +1,31 @@
+INSTALL
+========
+
+Requirements:
+
+    - Modern GNU/Linux system/kernel :-)
+    - Python 3.5 recommended
+    - Django >= 1.11.xx (Django >= 2.x is not supported.)
+    - setuptools
+    - uWSGI 
+    - nginx
+    - Patience... :-)
+
+The old way:
+
+    % sudo python setup.py install --prefix=/usr/local 
+
+To develop locally, you can use the "develop" command provided by
+setuptools to install a symlink to the source directory:
+
+    % sudo make develop
+
+Finally you should install djangorc.sample to /etc/djangorc...
+
+    % cp extras/djangorc.sample /etc/djangorc
+
+Then in your $HOME/.profile, add the following lines to enable automatic
+django configuration upon login:
+
+    [ -r "/etc/djangorc" ] && . /etc/djangorc 
+

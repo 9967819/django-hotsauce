@@ -1,0 +1,3 @@
+from sandbox.config.settings import *
+DEBUG = False
+ENABLE_BEAKER = False

@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Gazpacho Interface Designer
+Comment=Design Graphical User Interfaces
+Icon=$datadir/pixmaps/gazpacho-icon.png
+Exec=$prefix/bin/gazpacho %F
+Terminal=false
+Type=Application
+Version=0.9.4
+MimeType=application/x-glade
+Encoding=UTF-8
+Categories=Application;Development;GUIDesigner;
+Name[es]=Diseñador de Interfaces Gazpacho
+Comment[es]=Diseñar interfaces gráficas de usuario
+Name[es_ES]=Diseñador de Interfaces Gazpacho
+Comment[es_ES]=Diseñar interfaces gráficas de usuario
+Name[gl_ES]=Deseñador de Interfaces Gazpacho
+Comment[gl_ES]=Deseñar interfaces gráficas de usuario
+Name[fr_FR]=Générateur d'interface utilisateur Gazpacho
+Comment[fr_FR]=Générer des interfaces utilisateur
+Name[pt_BR]=Construtor de Interfaces para Usuário
+Comment[pt_BR]=Projetar Interfaces Gráficas para Usuários

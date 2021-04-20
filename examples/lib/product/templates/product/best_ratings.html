@@ -1,0 +1,31 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% load satchmo_util %}
+{% load satchmo_ratings %}
+
+{% block navbar %}
+<li class="first"><a href="{{ shop_base }}/">{% trans "Home" %}</a></li>
+<li>{% trans "Most Popular" %}</li>
+{% endblock %}
+
+{% block content %}
+<h2>{% trans "Best Rated Products" %}</h2>
+{% for product in products %}
+	<div class="bestrated">
+    <div class = "productImage">    
+   		{% if product.main_image %}
+      	<center>
+            {% thumbnail product.main_image.picture 85x85 as image %}
+            <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" /></a>
+      	</center>
+   		{% endif %}     
+    	<p><a href="{{ product.get_absolute_url }}">{{ product.translated_name }}</a><br/>
+		{% with product|product_rating_average_string as rating %}
+		{% blocktrans %}Rating {{ rating }}{% endblocktrans %}
+		{% endwith %}
+		</p>
+	</div>
+	</div>
+{% endfor %}
+{% endblock %}

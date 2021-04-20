@@ -1,0 +1,31 @@
+#!/bin/sh
+#Install the required modules with pip if the script
+#is executable to allow setup.py to run without errors.
+#Usage: bootstrap python2.7 pypy
+
+if [ "$(id -u)" != "0" ]; then
+    echo "You must be root to run this program."
+    exit 2
+fi
+if [ "$1" != "" ]; then
+    python_exec="$1"
+else
+    echo "Usage: $- /path/to/python"
+    exit 2
+fi
+
+install_package(){
+    #shift;
+
+    with_pip=1
+    if [ -n "$with_pip" ]; then
+     command_script=pip3
+     package_name="$1";
+     eval "$command_script install '$package_name'" || true;
+    fi;
+}
+
+install_package "pyyaml"
+#install_package "Cython>=0.28.5"
+
+make develop $@ || true

@@ -1,0 +1,140 @@
+<jdahlin> seth!
+<jdahlin> seth: I need some advise!
+<seth> hi jdahlin!
+<seth> What's up?
+* jdahlin is hacking on a menueditor
+<seth> cool :)
+<jdahlin> seth: do you have any ui suggestions for it
+<jdahlin> eg, adding, removing and rearranging menus and menuitems
+<seth> Yup :)
+<seth> Just provide the ability to turn items on/off
+<seth> And then allow adding new menu items
+<jdahlin> currently I'm playing with a context menu, for adding and removing
+<jdahlin> on and off?
+<seth> Visible vs. Not
+<seth> I think re-arranging menus, etc is pretty silly fairly obscure behavior
+<seth> Mostly the value is to sysadmins
+<jdahlin> oh, this is for a gui designer
+<seth> oh, heh
+<jdahlin> not for the panel
+<seth> :)
+<seth> No wonder that was confusing *grin*
+<jdahlin> slightly different use case :-)
+<seth> You must have been wondering what I was smoking
+<jdahlin> yeah
+* jdahlin does not care too much about a menu editor for the panel
+<jdahlin> seth: so, back to the subject
+<seth> yup
+<jdahlin> do you think a popup menu is worth it?
+<seth> I don't have a prepared response for what you're doing, so lemme think a second
+<seth> A popup menu?
+<jdahlin> eg, right clicking on an entry
+<jdahlin> where you can remove an entry or add a new one
+<jdahlin> perhaps some other things too
+<jdahlin> I fear dnd.
+<seth> You are currently using a tree view?
+<jdahlin> yeah
+<jdahlin> but I'd prefer having a WYSIWYG style editor
+<jdahlin> of course, if you have a better idea..
+<seth> I'm not sure a WYSIWYG editor would really be much better
+<seth> Tree view is probably pretty ok
+<jdahlin> aka glade-2?
+<jdahlin> that's a horribly difficult interface to learn and use
+<seth> Yeah, I agere
+<seth> But the devil is in the details
+<jdahlin> how is interface builder doing menus?
+<seth> hm, I don't know actually
+<seth> I can check it out for you on monday maybe
+<seth> Assuming dfong is at work
+<seth> I would suggest doing something semi-schematic
+<jdahlin> that'd be great
+<seth> So represent items sort of visually
+<seth> e.g. don't show U_nderline Crap
+<jdahlin> remember that actions needs to be represented too
+<seth> And show separators as separators
+<seth> Actions?
+<jdahlin> yeah
+<seth> As in GTK ui manager stuff?
+<jdahlin> right
+<jdahlin> eg, shared between toolbars and menubars
+<jdahlin> actually, gazpacho does not support normal menubars and toolbars, only ones created by uimanager
+<seth> OK, so one thing you can do that'd be nice is to make stock items have stock actions
+<seth> So you don't have to worry about actions and connecting them with toolbar items when you use a stock item
+<jdahlin> nod.
+<jdahlin> I think actions should be transparent
+<jdahlin> so when you add something to a toolbar or menubar, an action is created
+<seth> You could consider just having the menubar be defined
+<jdahlin> and later you can connect different buttons and entries to the same action
+<seth> And then letting people select menu items to also add to the toolbar
+<seth> It requires that toolbar be a subset of menus, but that is good UI practice anyway
+<jdahlin> what about ordering in the toolbar?
+<jdahlin> multiple toolbars, separators?
+<seth> Do it epiphany style
+<seth> Just let people drag them around
+<seth> Actually
+<seth> It'd be *really* cool if gazpacho could somehow let people create apps with a built-in toolbar editor
+<seth> Like epiphanies
+<jdahlin> not sure about that
+<jdahlin> a user interface is a lot more complex than the subset the epiphany toolbar supports
+<seth> In what sense?
+<seth> sorry, wasn't clear
+<jdahlin> boxes, and layout in general
+<seth> yeah, no no
+<seth> I was talking about something different :)
+<jdahlin> ah
+<seth> It'd be cool if GTK+ apps had a stock "toolbar editor" built in to them
+<jdahlin> now I got you
+<seth> Such as epiphany's
+<jdahlin> :-)
+<jdahlin> yeah, it needs to go into gtk+ at some point
+<jdahlin> its actually really polished
+<seth> Its a liiiitle unclear how to remove toolbars
+<seth> But otherwise, yes
+* seth helped marco with it
+<seth> So what if the menu editor and the toolbar editor are combined
+<seth> And you basically have this tree view
+<seth> And you can drag items out if it into the toolbar
+<seth> And re-arrange them and stuff
+<seth> And drag in separators
+<seth> If I had a scanner I could do a sketch for you really quick
+<seth> But none at home
+<jdahlin> camera? :)
+<seth> nope
+* seth will try to draw something in gimp
+<jdahlin> thanks
+* jdahlin needs to catch some Zzz
+<seth> give me a sec?
+<jdahlin> sure
+<seth> jdahlin: http://campd.isfuckingmetal.com/quicky.png
+<seth> jdahlin: Most menu items in most menus are stock
+<seth> jdahlin: So we try to make that easiest
+<seth> jdahlin: And basically have a pallette of stock items on the right
+<seth> jdahlin: Categorized based on the toplevel menu they usually go in (in this case "File") with a pulldown
+<jdahlin> seth: right, and eventually support creating of stock icons
+<jdahlin> creation
+<seth> jdahlin: Yeah, and then there'll be an area (not shown) for creating your own pallette of items
+<seth> Then you can drag things into the menu tree there
+<seth> And arrange/indent them etc
+<seth> And/or drag them into the toolbar
+<seth> there'll also be a "separator" item always visible below the stock pallette
+<seth> THat you can drag in at any point
+<jdahlin> but don't you think its confusing to have a separate interface for designing?
+<seth> Very rough
+<seth> no
+<jdahlin> instead of having a canvas, which looks like the real  widgets
+<seth> Its more confusing figuring out how to overload the menus themselves
+<jdahlin> overload?
+<seth> I think the impact on programmers is marginal
+<seth> People have ideas how menus should behave
+<seth> Changing the semantics of that so it *looks* like a menu but is editable is probably more confusing
+<seth> Anyway, you can make this a lot like menus
+<seth> This is a tool for programmers
+<seth> I think we can make it very easy to use
+<seth> But a little abstractions isn't bad
+<jdahlin> indeed
+<seth> Anyway, more later
+<jdahlin> tna ,s
+* seth has to bathroom, jdahlin has to bed :)
+<jdahlin> thanks
+<seth> sure thing
+<seth> my pleasure

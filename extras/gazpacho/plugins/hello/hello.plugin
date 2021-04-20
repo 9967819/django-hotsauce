@@ -1,0 +1,7 @@
+[Gazpacho Plugin]
+name = hello
+title = Hello Plugin
+class = hello.hello.HelloPlugin
+description = Very annoying plugin that demonstrates the Plugin api
+author = Lorenzo Gil Sanchez <lgs@sicem.biz>
+version = 1.0
