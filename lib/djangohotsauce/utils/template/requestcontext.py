@@ -10,7 +10,10 @@ class RequestContext(object):
     def __init__(self, request, ctx):
 
         self.settings = LazySettings()
-        self.context_processors = self.settings.TEMPLATE_CONTEXT_PROCESSORS
+        if 'TEMPLATE_CONTEXT_PROCESSORS' in self.settings:
+            self.context_processors = self.settings.TEMPLATE_CONTEXT_PROCESSORS
+        else:
+            self.context_processors = []
         self.view_dicts = [ctx,]
         for name in self.context_processors:
             f = get_callable(name)

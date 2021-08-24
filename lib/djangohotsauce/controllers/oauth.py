@@ -19,8 +19,12 @@ class OAuthController(WSGIController):
         self.client = client
         super(OAuthController, self).__init__(**kwargs)
     
+    #def init_request(self, environ):
+    #    self._request = self._request_class(environ)
+    #    return self._request
+
     def __call__(self, environ, start_response):
-        self._request = self.init_request(self._request_class(environ))
+
         path_url = environ['PATH_INFO']
         if '/oauthcallback2' in path_url:
             try:
@@ -40,7 +44,7 @@ class OAuthController(WSGIController):
                     'oauth_token': token,
                     'oauth_token_secret': verifier}
                 self.request.environ['twitter.access_token'] = self.client.auth.get_accesss_token(verifier)    
-        return WSGIController.__call__(self, environ, start_response)
+        return super(OAuthController, self).__call__(environ, start_response)
 
 
 oauthclient = OAuthClient

@@ -27,7 +27,7 @@ classifiers = [
 
 setup(
     name='django-hotsauce',
-    version='1.3.7',
+    version='1.3.9',
     description='Scalable and heterogeneous web toolkit sitting on top of Django and others',
     long_description='The Django-hotsauce programming toolkit is a high-performance and scalable Python web framework derived from Django project.',
     author='Jack Bortone',
@@ -66,7 +66,7 @@ setup(
         #'python-epoll>=1.0',       # For epoll support Linux only (optional)
         #'pytidylib>=0.2.1',        # PyTidyLib support      (optional) 
         #'python-memcached>=1.58',  # memcached support      (optional)
-        'werkzeug>=1.0.1',         # Werkzeug  support      (optional) 
+        'werkzeug==1.0.1',         # Werkzeug  support      (optional) 
         #'gevent==1.4.0',            # Gevent    support      (optional)
         #'ZODB>=5.3.0',              # ZODB backend support   (optional)
         #'ZEO>=5.1.0',               # ZEO backend support    (optional)

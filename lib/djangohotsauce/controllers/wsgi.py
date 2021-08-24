@@ -48,7 +48,7 @@ class WSGIController(BaseController):
     _response_class = HTTPResponse
 
     def __init__(self, settings=None, enable_logging=True, 
-        autoload=True, debug=False):
+        autoload=True, debug=False, environ=None):
         """
         Initializes a ``BaseController`` instance for processing
         standard Django view functions and handling basic error conditions.
@@ -71,7 +71,7 @@ class WSGIController(BaseController):
         # wsgi callbacks. (DEPRECATED)
         #if (autoload and hasattr(self.settings, 'CUSTOM_ERROR_HANDLERS')):
         #    self.registerWSGIHandlers(self.settings.CUSTOM_ERROR_HANDLERS)
-        self._request = None
+
 
     def __call__(self, environ, start_response):
         """
@@ -85,10 +85,11 @@ class WSGIController(BaseController):
         proper callable function or class.
 
         """
-        request = self.init_request(self._request_class(environ=environ))
-        with sessionmanager(request):
-            _local.request = request
-            return self.get_response(request, start_response)
+        req = self.init_request(self._request_class(environ=environ))
+        with sessionmanager(req):
+            _local.request = req
+            self._request = req
+            return self.get_response(req, start_response)
 
     def get_response(self, request, start_response):
         """Process ``path_url`` and return a callable function as

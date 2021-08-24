@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+import copy
 #from werkzeug.local import Local
-
 try:
     #Py3
     from urllib.parse import unquote_plus
@@ -19,7 +18,7 @@ class HTTPRequest(BaseRequest):
 
     def __init__(self, environ={}, populate_request=True, shallow=True, **kwargs):
         """provide a generic environment for HTTP requests"""
-        super(HTTPRequest, self).__init__(environ=environ, populate_request=populate_request, shallow=shallow, **kwargs)
+        super(HTTPRequest, self).__init__(environ, populate_request=populate_request, shallow=shallow, **kwargs)
         self._environ = environ.copy()
         
     def get_user(self):
@@ -57,7 +56,7 @@ class HTTPRequest(BaseRequest):
     def is_ajax(self):
         """check if the http request was transmitted with asyncronous (AJAX) transport"""
         if 'HTTP_X_REQUESTED_WITH' in self.environ:
-            if self.environ['HTTP_X_REQUESTED_WITH'] is 'XMLHttpRequest':
+            if self.environ['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest':
                 return True
         #print 'not ajax'        
         return False        
