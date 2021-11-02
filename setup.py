@@ -27,11 +27,11 @@ classifiers = [
 
 setup(
     name='django-hotsauce',
-    version='1.3.9',
+    version='1.4',
     description='Scalable and heterogeneous web toolkit sitting on top of Django and others',
     long_description='The Django-hotsauce programming toolkit is a high-performance and scalable Python web framework derived from Django project.',
     author='Jack Bortone',
-    author_email='jack@open-neurosecurity.org',
+    author_email='tkadm30@yandex.com',
     license='Apache License V2',
     keywords='django-hotsauce, django, uwsgi, oauth, werkzeug',
     #url='https://isotopesoftware.ca/software/django-hotsauce',

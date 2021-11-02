@@ -15,6 +15,7 @@ fi
 #Path to the root directory (usually ".")
 #Default: "." 
 ROOTDIR=`cd -P -- "$(dirname -- "$0")/" && pwd -P`
+TESTDIR="$ROOTDIR/tests"
 #Directory where architecture-dependent files are located,
 #usually $ROOTDIR/lib/site-packages
 LIBDIR="$ROOTDIR/lib/site-packages"
@@ -32,4 +33,4 @@ fi
 export PYTHONIOENCODING="utf8"
 export PYTHONHASHSEED=random
 #export PYTHONRANDOMHASH=1
-export ROOTDIR PYTHONPATH DJANGO_SETTINGS_MODULE DJANGO_HOME
+export TESTDIR ROOTDIR PYTHONPATH DJANGO_SETTINGS_MODULE DJANGO_HOME

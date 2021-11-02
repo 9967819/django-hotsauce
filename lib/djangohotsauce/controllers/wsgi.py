@@ -48,7 +48,8 @@ class WSGIController(BaseController):
     _response_class = HTTPResponse
 
     def __init__(self, settings=None, enable_logging=True, 
-        autoload=True, debug=False, environ=None):
+        autoload=True, debug=False, environ=None, logger=None,
+        resolver=None):
         """
         Initializes a ``BaseController`` instance for processing
         standard Django view functions and handling basic error conditions.
@@ -57,14 +58,22 @@ class WSGIController(BaseController):
 
         - ``settings``: Django settings module (required)
         """
-        self.logger = log
+        if enable_logging and logger:
+            self.logger = logger
+        else:    
+            self.logger = log
+        
         if settings is not None:
             self.settings = settings
         else:
             self.settings = LazySettings()
 
         setattr(self, '_urlconf', self.settings.ROOT_URLCONF)
-        setattr(self, '_resolver', get_resolver(self._urlconf, self.settings))
+        if resolver is not None:
+            setattr(self, '_resolver', resolver)
+        else:
+            setattr(self, '_resolver', get_resolver(self._urlconf, self.settings))
+        
         self._resolver._urlconf_module = import_module(self._urlconf)
         
         # If using legacy autoload mecanism, attempt to register user-specified

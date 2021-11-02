@@ -12,7 +12,7 @@
 # echo "Please consider setting the \'DJANGO_HOME\' variable." 
 #fi
 
-. /etc/djangorc.devel
+. djangorc.sample
 
 #Path to the root directory (usually ".")
 #Default: "." 
