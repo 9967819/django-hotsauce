@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2007-2019 Jack Bortone <jack@isotopesoftware.ca>
-# All rights reserved.
 """WSGI helper functions and classes for development purposes.
 
 """
@@ -40,13 +38,14 @@ class BannerBase(object):
 
     def __init__(self, fp=debug_msg_handler, bind_addr=('127.0.0.1', '8000'),
                  settings=None):
-        self.bind_addr = bind_addr
+        self.bind_addr = bind_addr #TODO: use default_bind_addr
+        print(bind_addr)
         fmt = self.get_default_format(settings)
         self.start_time = time.strftime(fmt)
-        self.server_uri = 'http://%s:%i/' % bind_addr
-        if not isinstance(self.bind_addr, tuple):
-            raise ValueError("Error: invalid bind_addr type: %r" \
-                % type(self.bind_addr))
+        self.server_uri = 'http://%s:%i/' % (bind_addr[0], int(bind_addr[1]))
+        #if not isinstance(self.bind_addr, tuple):
+        #    raise ValueError("Error: invalid bind_addr type: %r" \
+        #        % type(self.bind_addr))
 
         #assert len(self.bind_addr) == 2, \
         #    'bind_addr must contains exactly two elements'
@@ -87,7 +86,7 @@ class WSGIServerBase(object):
     def __init__(self, wsgi_app, bind_addr, debug=True):
         """HTTPServer.__init__"""
         self.host = bind_addr[0]
-        self.port = bind_addr[1]
+        self.port = int(bind_addr[1])
         self.wsgi_app = wsgi_app
         if debug:
             # run the wsgi app in using wsgiref validator

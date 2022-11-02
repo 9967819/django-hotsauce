@@ -7,11 +7,7 @@ WSGI context with the ``wsgiref`` module.
 import os
 import sys
 import importlib
-
-try:
-    import argparse2 as argparse
-except ImportError:
-    import argparse
+import argparse
 
     
 from djangohotsauce.utils.django_settings import LazySettings
@@ -30,16 +26,20 @@ _ = lambda x: log.debug(x)
 
 def parse_cmdline(argv):
     parser = argparse.ArgumentParser(__file__)
-    parser.add_argument('-d', '--debug', action="store_true", \
+    parser.add_argument('--debug', action="store_true", \
         help="Enable debugging mode", default=False)
-    parser.add_argument('-p', '--port', action="store_true", \
+    parser.add_argument('--port', action="store", \
         dest="port",
+        nargs=1,
         help="HTTP port to accept connections. default: 8133",
-        default=8133)
-    parser.add_argument('-H', '--host', action="store_true", \
+        default=8133,
+        )
+    parser.add_argument('--host', action="store", \
         dest="host",
+        nargs=1,
         help="Listening address. default: localhost",
-        default="localhost")
+        default="localhost",
+        )
     parser.add_argument('-c', '--config', dest="filename",
         default="development.ini", nargs=1, \
         help="Path to a development.ini-like file")
@@ -83,7 +83,7 @@ def main(argv):
             sys.path.insert(0, path)
 
     # A INET4 address to bind to for listening for HTTP connections 
-    bind_addr = (options.host, options.port)
+    bind_addr = (options.host[0], options.port[0])
 
     #if _settings.DEBUG: 
     #    #_('WSGIController class=%s' % repr(WSGIHandlerClass))
