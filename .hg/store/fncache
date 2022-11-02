@@ -8305,3 +8305,4 @@ data/examples/lib/satchmo_admin/media/img/admin/arrow-down.gif.i
 data/examples/contrib/django/core/management/commands/sqlflush.py.i
 data/examples/lib/satchmo/static/js/satchmo_product.js.i
 data/examples/satchmo_store/contrib/django/conf/locale/is/LC_MESSAGES/djangojs.mo.i
+data/lib/djangohotsauce/controllers/twitter.py.i
