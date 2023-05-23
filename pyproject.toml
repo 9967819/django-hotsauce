@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-hotsauce"
+version = "1.5"
+authors = [
+	{name = "Etienne Robillard", email = "smart@open-neurosecurity.org"},
+]
+description = "Scalable and heterogeneous web toolkit sitting on top of Django and others"
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["django-hotsauce", "django", "wsgi", "framework"]
+license = {text = "Apache Version 2"}
+classifiers = [
+ "Development Status :: 5 - Production",
+ "Framework :: Django",
+ "Intended Audience :: Developers",
+ "Operating System :: OS Independent",
+ "Programming Language :: Python",
+ "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+ "Topic :: Internet :: WWW/HTTP :: WSGI :: Server"
+]

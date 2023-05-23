@@ -1,5 +1,0 @@
-CHECKOUT_BUTTON_SIZES = {
-    "SMALL" : (160,43),
-    "MEDIUM" : (168,44),
-    "LARGE" : (180,46)
-}

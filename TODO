@@ -1,5 +1,5 @@
-- add alternative template backend
 - more testing !! 
-- Python 3.7 support
-- PyPy 7.0/JIT support
+- Python 3.9 and 3.11 support
 - Extend and complete GoogleController
+- make release 1.5 (venv, pytest, python3.11, etc..)
+

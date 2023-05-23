@@ -1,11 +1,13 @@
-SHELL:= /bin/sh
+PACKAGE_NAME=django-hotsauce
+SHELL= /bin/bash
 TOPDIR= .
 CURDIR= $(TOPDIR)
+
 PREFIX?= /usr/local
 OBJDIR= $(TOPDIR)/build
 LIBDIR= $(TOPDIR)/lib
-DOCDIR= $(OBJDIR)/docs
-HTMLDIR= $(DOCDIR)/html
+DOCDIR= /home/www/html-docs/django-hotsauce
+HTMLDIR= $(DOCDIR)
 DISTDIR= $(TOPDIR)/dist
 SRCDIR= $(LIBDIR)
 
@@ -14,7 +16,7 @@ SRCDIR= $(LIBDIR)
 ENABLE_DOCS?="YES" # Set to "NO" to disable building docs
 WITH_SPHINX?="YES"
 
-#Enable PyPy
+#Enable PyPy (Experimental)
 WITH_PYPY?="NO"
 
 #Enable Python3
@@ -23,7 +25,7 @@ WITH_PYTHON?=python3
 #PYTHONPATH?=
 
 #HTML documentation will be installed into this dir
-DOCPREFIX?=$(PREFIX)/share/doc/django-hotsauce
+DOCPREFIX?=$(PREFIX)
 
 ifdef WITH_PYTHON
     PYTHON=${WITH_PYTHON}
@@ -49,6 +51,7 @@ DOXYGEN?= /usr/bin/doxygen
 FIND?= /usr/bin/find
 GREP?= grep -E
 HG?= hg
+GIT?= /usr/bin/git
 INSTALL?= install
 MAKE?= make
 MD5SUM?= md5sum
@@ -61,17 +64,17 @@ TRUE?= true
 WHICH?= which
 XARGS?= xargs
 
-distfiles=$(ls "$DISTDIR/*.*")
+dist=$(FIND $DISTDIR -type f -name "*.gz")
 
 all: build 
 
 build: clean
-	$(PYTHON) setup.py build
+	$(PYTHON) -m pip build
 clean:
-	$(RM) -rf $(OBJDIR) MANIFEST $(DOXYGEN_BUILDDIR) *-stamp*
-	$(RM) -rf $(DOCDIR)/build
+	$(RM) $(OBJDIR) MANIFEST $(DOXYGEN_BUILDDIR) *-stamp*
+	$(RM) $(DOCDIR)/build
 changelog:
-	$(HG) log > CHANGES
+	$(GIT) log > CHANGES
 check:
 	$(ECHO) 'Sorry, "make check" is not implemented yet.'
 develop: clean
@@ -79,11 +82,10 @@ develop: clean
 distclean: clean
 	$(FIND) $(TOPDIR) -type f -name "*.py[co]" -exec $(RM) -f '{}' ';' || $(TRUE)
 	$(FIND) $(TOPDIR) -type f -name "*.sw[po]" -exec $(RM) -f '{}' ';' || $(TRUE)
-	$(FIND) $(TOPDIR) -type f -name "1" -exec $(RM) -f '{}' ';' || $(TRUE)
 help:
 	$(PYTHON) setup.py --help
 install: build
-	$(PYTHON) setup.py install --prefix=$(PREFIX) $(COMPILE)
+	$(PYTHON) -m pip install --prefix=$(PREFIX) $(COMPILE)
 installdocs: builddocs
 ##@echo "===> Creating new documentation set..."
 ##$(MKDIR) ${DOCPREFIX} 
@@ -110,8 +112,8 @@ html:
 	$(MAKE) -C ${DOCDIR} -f Makefile html
 ###administrative commands, for maintainers or
 ###core developers only (ie: distro package builders) 
-manifest:
-	$(HG) -q manifest > MANIFEST
+MANIFEST.in : distclean
+	$(SHELL ${CURDIR}/tools/manifest.sh > MANIFEST || $(TRUE))
 md5:
 	@for f in "${distfiles}"; do \
 		$(MD5SUM) $$f >> CHECKSUMS.txt || $(TRUE);\
