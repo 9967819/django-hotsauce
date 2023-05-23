@@ -7,4 +7,4 @@ then
  echo "PYTHON interpreter = $PYTHON"
  . /etc/djangorc
 fi
-$PYTHON ./bin/run.py $@
+pytest .

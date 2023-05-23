@@ -10,10 +10,10 @@ except ImportError:
     import unittest
 
 
-from notmm.controllers.base import BaseController
-from notmm.controllers.wsgi import WSGIController
-from notmm.utils.django_settings import LazySettings
-from notmm.utils.wsgilib         import HTTPRequest, HTTPResponse
+from djangohotsauce.controllers.base import BaseController
+from djangohotsauce.controllers.wsgi import WSGIController
+from djangohotsauce.utils.django_settings import LazySettings
+from djangohotsauce.utils.wsgilib import HTTPRequest, HTTPResponse
 from werkzeug.test import Client as TestClient
 
 settings = LazySettings()
@@ -38,10 +38,10 @@ def inittestpackage():
         del sys.modules['settings']
 
 
-class DjangoTestCase(unittest.TestCase):
-    def setUp(self):
-        import django
-        django.setup()
+#class DjangoTestCase(unittest.TestCase):
+#    def setUp(self):
+#        import django
+#        django.setup()
 
 # default test controller
 
