@@ -8,17 +8,17 @@ try:
 except ImportError:
     from urllib import unquote_plus
 
-from werkzeug.wrappers import BaseRequest
+from werkzeug.wrappers import Request
 from werkzeug.formparser import parse_form_data
 from werkzeug.datastructures import ImmutableMultiDict
 
 __all__ = ['HTTPRequest']
 
-class HTTPRequest(BaseRequest):
+class HTTPRequest(Request):
 
-    def __init__(self, environ={}, populate_request=True, shallow=True, **kwargs):
+    def __init__(self, environ={}, populate_request=True, shallow=False, **kwargs):
         """provide a generic environment for HTTP requests"""
-        super(HTTPRequest, self).__init__(environ, populate_request=populate_request, shallow=shallow, **kwargs)
+        #super(HTTPRequest, self).__init__(environ, populate_request=populate_request, shallow=shallow, **kwargs)
         self._environ = environ.copy()
         
     def get_user(self):
@@ -76,5 +76,9 @@ class HTTPRequest(BaseRequest):
     @property
     def GET(self):
         return self.args
+
+    @property
+    def environ(self):
+        return self._environ
 
     path_url = property(get_full_path)

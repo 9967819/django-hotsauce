@@ -9,9 +9,10 @@ import urllib
 import logging
 import time
 import platform
+import werkzeug
 python_impl = platform.python_implementation()
 
-from wsgiref import simple_server, validate
+#from wsgiref import simple_server, validate
 
 from djangohotsauce.utils.log import configure_logging
 from djangohotsauce.utils.configparse import string_getter, int_getter
@@ -81,7 +82,7 @@ class WSGIServerBase(object):
     # Uncomment this to enable cherrypy based http daemon
     # serverClass = wsgiserver.CherryPyWSGIServer
     
-    serverClass = simple_server # wsgiref
+    serverClass = werkzeug.run_simple # wsgiref
     
     def __init__(self, wsgi_app, bind_addr, debug=True):
         """HTTPServer.__init__"""
@@ -155,5 +156,5 @@ def daemonize(wsgi_app, bind_addr, logging=True, autoreload=True,
     except:
         raise
 
-class HTTPServer(WSGIServerBase):
-    pass
+main = daemonize
+

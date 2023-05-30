@@ -5,7 +5,7 @@
 import os, sys, threading
 
 from functools import wraps
-from djangohotsauce.datastore import DataStore
+from djangohotsauce.datastore.base import DataStore
 from djangohotsauce.utils.django_compat import memoize
 
 

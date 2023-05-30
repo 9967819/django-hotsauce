@@ -70,7 +70,7 @@ def parse_cmdline(argv):
     options = parser.parse_args(args=argv[1:])
     return options
 
-def main(argv):
+def main():
     options = parse_cmdline(sys.argv)
 
     if options.version:
@@ -83,7 +83,7 @@ def main(argv):
             sys.path.insert(0, path)
 
     # A INET4 address to bind to for listening for HTTP connections 
-    bind_addr = (options.host[0], options.port[0])
+    bind_addr = (options.host, options.port)
 
     #if _settings.DEBUG: 
     #    #_('WSGIController class=%s' % repr(WSGIHandlerClass))
@@ -110,5 +110,5 @@ def main(argv):
 
 if __name__ == "__main__":
     #assert len(sys.argv) >= 2, 'usage: runserver.py host:port' 
-    main(argv=sys.argv)
+    main()
 

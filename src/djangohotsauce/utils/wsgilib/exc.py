@@ -7,21 +7,16 @@ class HTTPException(BaseException):
 
 HTTPServerError = HTTPException
 
-class HTTPNotFound(HTTPException):
-    """HTTP 404 (Not Found)"""
-    status_int = 404
-HTTPNotFoundResponse = HTTPNotFound    
-
-class HTTPNotModified(HTTPNotFound):
+class HTTPNotModified(HTTPException):
     status_int = 304
 class HTTPClientError(HTTPException):
     status_int = 400 # bad request
 class HTTPUnauthorized(HTTPClientError):
     status_int = 401
-
-
-from authkit.authorize.exc import NotAuthenticatedError
-class HTTPAuthenticationError(NotAuthenticatedError, HTTPClientError):
+class HTTPAuthenticationError(HTTPClientError):
     status_int = 403
-
+class HTTPNotFound(HTTPException):
+    """HTTP 404 (Not Found)"""
+    status_int = 404
+HTTPNotFoundResponse = HTTPNotFound    
 HTTPForbidden = HTTPAuthenticationError    

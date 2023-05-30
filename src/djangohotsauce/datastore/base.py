@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Copyright (c) 2018 Jack Bortone <jack@isotopesoftware.ca>
-# All rights reserved.
-#
 # This file is part of the djangohotsauce distribution.
 # Please review the LICENSE file for details.
 
@@ -18,8 +14,6 @@ __all__ = ['BaseStore', 'DataStore']
 
 import posixpath
 import copy
-from djangohotsauce.utils.configparse import is_uppercase
-
 
 class BaseStore(object):
     """Base class for storing and loading objects."""
@@ -33,12 +27,12 @@ class BaseStore(object):
         in __dict__ and return that number. Note that
         only UPPER_CASE keys are being counted.
         """
-        return len([ key for key in self.__dict__ if is_uppercase(key) ])  
+        return len([ key for key in self.__dict__ if key.isupper() ])  
 
     def clear(self):
         """ remove everything that looks like a setting option """
         for key, val in self.__dict__.items():
-            if is_uppercase(key):
+            if key.isupper():
                 del self.__dict__[key]
         # reset the initialized object..
         #self.initialized = False

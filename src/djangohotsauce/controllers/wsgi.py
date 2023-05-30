@@ -21,7 +21,7 @@ from djangohotsauce.utils.wsgilib import (
 from .utils import get_django_callable
 from djangohotsauce.utils.template import direct_to_template
 
-from authkit.authorize.exc import NotAuthenticatedError, NotAuthorizedError
+#from authkit.authorize.exc import NotAuthenticatedError, NotAuthorizedError
 
 RequestClass = HTTPRequest
 _local = Local()
@@ -165,6 +165,10 @@ class WSGIController(BaseController):
     @property
     def user(self):
         return self.request.get_user()
+
+    @property
+    def routes(self):
+        return getattr(self, '_resolver')
 
     def _environ_getter(self):
         """ Returns the current WSGI environment instance."""

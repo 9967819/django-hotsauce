@@ -3,3 +3,15 @@
 - Extend and complete GoogleController
 - make release 1.5 (venv, pytest, python3.11, etc..)
 
+httpserver refactoring: 
+ httpserver config-set wsgiapp=app.MyController
+ httpserver dump-config
+ httpserver config-set listen_port=8888
+
+In development:
+ RedisController (NEW) 
+ deprecated dependency: configobj, wsgiref
+ httpserver now uses werkzeug by default
+ WSGIController.routes method (NEW)
+ New optional dependency: python-redis library
+ 
