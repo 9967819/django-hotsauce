@@ -9,4 +9,4 @@ from djangohotsauce.controllers.wsgi import WSGIController
 
 if __name__ == '__main__':
     wsgi_app = WSGIController()
-
+    print(wsgi_app)

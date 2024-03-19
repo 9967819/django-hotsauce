@@ -1,0 +1,645 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.3.1, pluggy-1.0.0
+rootdir: /home/smart/src/django-hotsauce/tests
+collected 1 item / 46 errors
+
+==================================== ERRORS ====================================
+_______________________ ERROR collecting test_support.py _______________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/test_support.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+test_support.py:14: in <module>
+    from djangohotsauce.controllers.wsgi import WSGIController
+../src/djangohotsauce/controllers/wsgi.py:8: in <module>
+    from djangohotsauce.utils.django_settings import LazySettings
+../src/djangohotsauce/utils/django_settings.py:8: in <module>
+    from djangohotsauce.datastore import DataStore
+../src/djangohotsauce/datastore/__init__.py:1: in <module>
+    from .base import DataStore
+../src/djangohotsauce/datastore/base.py:21: in <module>
+    from djangohotsauce.utils.configparse import is_uppercase
+../src/djangohotsauce/utils/configparse.py:13: in <module>
+    from configobj import ConfigObj
+E   ModuleNotFoundError: No module named 'configobj'
+______________ ERROR collecting apps/blogengine/test_tutorial.py _______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/apps/blogengine/test_tutorial.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+apps/blogengine/test_tutorial.py:3: in <module>
+    from test_support import unittest
+test_support.py:14: in <module>
+    from djangohotsauce.controllers.wsgi import WSGIController
+../src/djangohotsauce/controllers/wsgi.py:8: in <module>
+    from djangohotsauce.utils.django_settings import LazySettings
+../src/djangohotsauce/utils/django_settings.py:8: in <module>
+    from djangohotsauce.datastore import DataStore
+../src/djangohotsauce/datastore/__init__.py:1: in <module>
+    from .base import DataStore
+../src/djangohotsauce/datastore/base.py:21: in <module>
+    from djangohotsauce.utils.configparse import is_uppercase
+../src/djangohotsauce/utils/configparse.py:13: in <module>
+    from configobj import ConfigObj
+E   ModuleNotFoundError: No module named 'configobj'
+_______________ ERROR collecting apps/livestore/test_populate.py _______________
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/python.py:617: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/pathlib.py:564: in import_path
+    importlib.import_module(module_name)
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:163: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:345: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+/usr/lib64/python3.9/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/home/smart/src/django-hotsauce/tests/apps/livestore/test_populate.py", line 6
+E       print url
+E             ^
+E   SyntaxError: Missing parentheses in call to 'print'. Did you mean print(url)?
+_______________ ERROR collecting apps/livestore/test_resolver.py _______________
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/python.py:617: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/pathlib.py:564: in import_path
+    importlib.import_module(module_name)
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:163: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:345: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+/usr/lib64/python3.9/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/home/smart/src/django-hotsauce/tests/apps/livestore/test_resolver.py", line 7
+E       print callback
+E             ^
+E   SyntaxError: Missing parentheses in call to 'print'. Did you mean print(callback)?
+_______________ ERROR collecting apps/livestore/test_reverse.py ________________
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/python.py:617: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/pathlib.py:564: in import_path
+    importlib.import_module(module_name)
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:163: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:345: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+/usr/lib64/python3.9/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/home/smart/src/django-hotsauce/tests/apps/livestore/test_reverse.py", line 7
+E       print url
+E             ^
+E   SyntaxError: Missing parentheses in call to 'print'. Did you mean print(url)?
+_______________ ERROR collecting apps/mainapp/test_controller.py _______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/apps/mainapp/test_controller.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+apps/mainapp/__init__.py:1: in <module>
+    from test_controller import *
+E   ModuleNotFoundError: No module named 'test_controller'
+____________ ERROR collecting apps/moviereviews/test_controller.py _____________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/apps/moviereviews/test_controller.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+apps/moviereviews/__init__.py:1: in <module>
+    from test_controller import *
+E   ModuleNotFoundError: No module named 'test_controller'
+_______________ ERROR collecting apps/moviereviews/test_model.py _______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/apps/moviereviews/test_model.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+apps/moviereviews/__init__.py:1: in <module>
+    from test_controller import *
+E   ModuleNotFoundError: No module named 'test_controller'
+____________________ ERROR collecting asyncio/test_basic.py ____________________
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/python.py:617: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/pathlib.py:564: in import_path
+    importlib.import_module(module_name)
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:163: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:345: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+/usr/lib64/python3.9/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/home/smart/src/django-hotsauce/tests/asyncio/test_basic.py", line 11
+E       from notmm.controllers.async import AsyncIOController
+E                              ^
+E   SyntaxError: invalid syntax
+__________________ ERROR collecting auth/test_authenticate.py __________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/auth/test_authenticate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+auth/__init__.py:1: in <module>
+    from test_controller import *
+E   ModuleNotFoundError: No module named 'test_controller'
+___________________ ERROR collecting auth/test_controller.py ___________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/auth/test_controller.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+auth/__init__.py:1: in <module>
+    from test_controller import *
+E   ModuleNotFoundError: No module named 'test_controller'
+___________________ ERROR collecting benchmarks/test_base.py ___________________
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/python.py:617: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/pathlib.py:564: in import_path
+    importlib.import_module(module_name)
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:163: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:345: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+/usr/lib64/python3.9/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/home/smart/src/django-hotsauce/tests/benchmarks/test_base.py", line 39
+E       print obj
+E             ^
+E   SyntaxError: Missing parentheses in call to 'print'. Did you mean print(obj)?
+_________________ ERROR collecting datastore/test_datastore.py _________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/datastore/test_datastore.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+datastore/test_datastore.py:2: in <module>
+    from test_support import unittest
+test_support.py:14: in <module>
+    from djangohotsauce.controllers.wsgi import WSGIController
+../src/djangohotsauce/controllers/wsgi.py:8: in <module>
+    from djangohotsauce.utils.django_settings import LazySettings
+../src/djangohotsauce/utils/django_settings.py:8: in <module>
+    from djangohotsauce.datastore import DataStore
+../src/djangohotsauce/datastore/__init__.py:1: in <module>
+    from .base import DataStore
+../src/djangohotsauce/datastore/base.py:21: in <module>
+    from djangohotsauce.utils.configparse import is_uppercase
+../src/djangohotsauce/utils/configparse.py:13: in <module>
+    from configobj import ConfigObj
+E   ModuleNotFoundError: No module named 'configobj'
+_____________ ERROR collecting dbapi/orm/schevo/test_controller.py _____________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/dbapi/orm/schevo/test_controller.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+dbapi/orm/schevo/test_controller.py:6: in <module>
+    from notmm.controllers.schevo  import SchevoController
+E   ModuleNotFoundError: No module named 'notmm'
+_____________ ERROR collecting dbapi/orm/schevo/test_fieldspec.py ______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/dbapi/orm/schevo/test_fieldspec.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+dbapi/orm/schevo/test_fieldspec.py:11: in <module>
+    import schevo.mt
+E   ModuleNotFoundError: No module named 'schevo'
+____________ ERROR collecting dbapi/orm/schevo/test_schevo_zodb.py _____________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/dbapi/orm/schevo/test_schevo_zodb.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+dbapi/orm/schevo/test_schevo_zodb.py:5: in <module>
+    from schevo import database
+E   ModuleNotFoundError: No module named 'schevo'
+______________ ERROR collecting dbapi/orm/schevo/test_tutorial.py ______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/dbapi/orm/schevo/test_tutorial.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+dbapi/orm/schevo/test_tutorial.py:3: in <module>
+    from test_support import unittest
+test_support.py:14: in <module>
+    from djangohotsauce.controllers.wsgi import WSGIController
+../src/djangohotsauce/controllers/wsgi.py:8: in <module>
+    from djangohotsauce.utils.django_settings import LazySettings
+../src/djangohotsauce/utils/django_settings.py:8: in <module>
+    from djangohotsauce.datastore import DataStore
+../src/djangohotsauce/datastore/__init__.py:1: in <module>
+    from .base import DataStore
+../src/djangohotsauce/datastore/base.py:21: in <module>
+    from djangohotsauce.utils.configparse import is_uppercase
+../src/djangohotsauce/utils/configparse.py:13: in <module>
+    from configobj import ConfigObj
+E   ModuleNotFoundError: No module named 'configobj'
+______________ ERROR collecting dbapi/orm/schevo/test_xdserver.py ______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/dbapi/orm/schevo/test_xdserver.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+dbapi/orm/schevo/test_xdserver.py:18: in <module>
+    from schevo.backends.durus39 import DurusBackend as Connection
+E   ModuleNotFoundError: No module named 'schevo'
+________________ ERROR collecting dbapi/orm/schevo/test_zodb.py ________________
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/python.py:617: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/pathlib.py:564: in import_path
+    importlib.import_module(module_name)
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:163: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:345: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+/usr/lib64/python3.9/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/home/smart/src/django-hotsauce/tests/dbapi/orm/schevo/test_zodb.py", line 25
+E       print db.extents()
+E             ^
+E   SyntaxError: invalid syntax
+__________ ERROR collecting dbapi/orm/xdserverproxy/test_database.py ___________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/dbapi/orm/xdserverproxy/test_database.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+dbapi/orm/xdserverproxy/__init__.py:1: in <module>
+    from test_database import *
+E   ModuleNotFoundError: No module named 'test_database'
+__________________ ERROR collecting django110/test_generic.py __________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/django110/test_generic.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+django110/test_generic.py:7: in <module>
+    from notmm.utils.configparse import is_string
+E   ModuleNotFoundError: No module named 'notmm'
+________________ ERROR collecting django110/test_lazyobject.py _________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/django110/test_lazyobject.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+django110/test_lazyobject.py:3: in <module>
+    from notmm.utils.django_settings import SettingsProxy
+E   ModuleNotFoundError: No module named 'notmm'
+_________________ ERROR collecting django110/test_resolver.py __________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/django110/test_resolver.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+django110/test_resolver.py:12: in <module>
+    from notmm.controllers.wsgi             import BaseController, WSGIController
+E   ModuleNotFoundError: No module named 'notmm'
+_______________ ERROR collecting django110/test_sanity_check.py ________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/django110/test_sanity_check.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+django110/test_sanity_check.py:7: in <module>
+    from notmm.utils.configparse import is_string
+E   ModuleNotFoundError: No module named 'notmm'
+__________________ ERROR collecting django111/test_generic.py __________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/django111/test_generic.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+django111/test_generic.py:7: in <module>
+    from notmm.utils.configparse import is_string
+E   ModuleNotFoundError: No module named 'notmm'
+________________ ERROR collecting django111/test_lazyobject.py _________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/django111/test_lazyobject.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+django111/test_lazyobject.py:3: in <module>
+    from notmm.utils.django_settings import SettingsProxy
+E   ModuleNotFoundError: No module named 'notmm'
+_________________ ERROR collecting django111/test_resolver.py __________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/django111/test_resolver.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+django111/test_resolver.py:12: in <module>
+    from notmm.controllers.wsgi             import BaseController, WSGIController
+E   ModuleNotFoundError: No module named 'notmm'
+_______________ ERROR collecting django111/test_sanity_check.py ________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/django111/test_sanity_check.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+django111/test_sanity_check.py:7: in <module>
+    from djangohotsauce.utils.configparse import is_string
+../src/djangohotsauce/utils/configparse.py:13: in <module>
+    from configobj import ConfigObj
+E   ModuleNotFoundError: No module named 'configobj'
+___________________ ERROR collecting i18n/test_controller.py ___________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/i18n/test_controller.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+i18n/test_controller.py:2: in <module>
+    from django.utils.translation.trans_real import DjangoTranslation
+E   ModuleNotFoundError: No module named 'django'
+____________________ ERROR collecting i18n/test_gettext.py _____________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/i18n/test_gettext.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+i18n/test_gettext.py:3: in <module>
+    from django.middleware.locale            import LocaleMiddleware
+E   ModuleNotFoundError: No module named 'django'
+_________________ ERROR collecting moinmoin/test_controller.py _________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/moinmoin/test_controller.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+moinmoin/__init__.py:1: in <module>
+    from test_controller import *
+E   ModuleNotFoundError: No module named 'test_controller'
+______________________ ERROR collecting rss/test_feeds.py ______________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/rss/test_feeds.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+rss/test_feeds.py:3: in <module>
+    from utils import get_feed,get_feed_choices
+utils/__init__.py:1: in <module>
+    from test_utils_urlmap import *
+E   ModuleNotFoundError: No module named 'test_utils_urlmap'
+_____________________ ERROR collecting rss/test_shelve.py ______________________
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/python.py:617: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/pathlib.py:564: in import_path
+    importlib.import_module(module_name)
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:163: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+../../../python39_sandbox/lib64/python3.9/site-packages/_pytest/assertion/rewrite.py:345: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+/usr/lib64/python3.9/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/home/smart/src/django-hotsauce/tests/rss/test_shelve.py", line 9
+E       print type(feed)
+E             ^
+E   SyntaxError: invalid syntax
+___________________ ERROR collecting sql/test_controller.py ____________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/sql/test_controller.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+sql/__init__.py:1: in <module>
+    from test_controller import *
+E   ModuleNotFoundError: No module named 'test_controller'
+______________________ ERROR collecting sql/test_model.py ______________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/sql/test_model.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+sql/__init__.py:1: in <module>
+    from test_controller import *
+E   ModuleNotFoundError: No module named 'test_controller'
+_______________ ERROR collecting utils/test_streamloggerbase.py ________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/utils/test_streamloggerbase.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+utils/__init__.py:1: in <module>
+    from test_utils_urlmap import *
+E   ModuleNotFoundError: No module named 'test_utils_urlmap'
+_______________ ERROR collecting utils/test_utils_collection2.py _______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/utils/test_utils_collection2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+utils/__init__.py:1: in <module>
+    from test_utils_urlmap import *
+E   ModuleNotFoundError: No module named 'test_utils_urlmap'
+_______________ ERROR collecting utils/test_utils_configparse.py _______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/utils/test_utils_configparse.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+utils/__init__.py:1: in <module>
+    from test_utils_urlmap import *
+E   ModuleNotFoundError: No module named 'test_utils_urlmap'
+_______________ ERROR collecting utils/test_utils_cutandpaste.py _______________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/utils/test_utils_cutandpaste.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+utils/__init__.py:1: in <module>
+    from test_utils_urlmap import *
+E   ModuleNotFoundError: No module named 'test_utils_urlmap'
+_________________ ERROR collecting utils/test_utils_fixture.py _________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/utils/test_utils_fixture.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+utils/__init__.py:1: in <module>
+    from test_utils_urlmap import *
+E   ModuleNotFoundError: No module named 'test_utils_urlmap'
+________________ ERROR collecting utils/test_utils_template.py _________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/utils/test_utils_template.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+utils/__init__.py:1: in <module>
+    from test_utils_urlmap import *
+E   ModuleNotFoundError: No module named 'test_utils_urlmap'
+_________________ ERROR collecting utils/test_utils_urlmap.py __________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/utils/test_utils_urlmap.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+utils/__init__.py:1: in <module>
+    from test_utils_urlmap import *
+E   ModuleNotFoundError: No module named 'test_utils_urlmap'
+__________________ ERROR collecting webdav/test_controller.py __________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/webdav/test_controller.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+webdav/__init__.py:1: in <module>
+    from webdav.test_controller import *
+webdav/test_controller.py:5: in <module>
+    from test_support import (\
+test_support.py:14: in <module>
+    from djangohotsauce.controllers.wsgi import WSGIController
+../src/djangohotsauce/controllers/wsgi.py:8: in <module>
+    from djangohotsauce.utils.django_settings import LazySettings
+../src/djangohotsauce/utils/django_settings.py:8: in <module>
+    from djangohotsauce.datastore import DataStore
+../src/djangohotsauce/datastore/__init__.py:1: in <module>
+    from .base import DataStore
+../src/djangohotsauce/datastore/base.py:21: in <module>
+    from djangohotsauce.utils.configparse import is_uppercase
+../src/djangohotsauce/utils/configparse.py:13: in <module>
+    from configobj import ConfigObj
+E   ModuleNotFoundError: No module named 'configobj'
+______________________ ERROR collecting wsgi/test_json.py ______________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/wsgi/test_json.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+wsgi/__init__.py:1: in <module>
+    from test_response import HTTPResponseTestCase
+E   ModuleNotFoundError: No module named 'test_response'
+____________________ ERROR collecting wsgi/test_request.py _____________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/wsgi/test_request.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+wsgi/__init__.py:1: in <module>
+    from test_response import HTTPResponseTestCase
+E   ModuleNotFoundError: No module named 'test_response'
+____________________ ERROR collecting wsgi/test_response.py ____________________
+ImportError while importing test module '/home/smart/src/django-hotsauce/tests/wsgi/test_response.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib64/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+wsgi/__init__.py:1: in <module>
+    from test_response import HTTPResponseTestCase
+E   ModuleNotFoundError: No module named 'test_response'
+=========================== short test summary info ============================
+ERROR test_support.py
+ERROR apps/blogengine/test_tutorial.py
+ERROR apps/livestore/test_populate.py
+ERROR apps/livestore/test_resolver.py
+ERROR apps/livestore/test_reverse.py
+ERROR apps/mainapp/test_controller.py
+ERROR apps/moviereviews/test_controller.py
+ERROR apps/moviereviews/test_model.py
+ERROR asyncio/test_basic.py
+ERROR auth/test_authenticate.py
+ERROR auth/test_controller.py
+ERROR benchmarks/test_base.py
+ERROR datastore/test_datastore.py
+ERROR dbapi/orm/schevo/test_controller.py
+ERROR dbapi/orm/schevo/test_fieldspec.py
+ERROR dbapi/orm/schevo/test_schevo_zodb.py
+ERROR dbapi/orm/schevo/test_tutorial.py
+ERROR dbapi/orm/schevo/test_xdserver.py
+ERROR dbapi/orm/schevo/test_zodb.py
+ERROR dbapi/orm/xdserverproxy/test_database.py
+ERROR django110/test_generic.py
+ERROR django110/test_lazyobject.py
+ERROR django110/test_resolver.py
+ERROR django110/test_sanity_check.py
+ERROR django111/test_generic.py
+ERROR django111/test_lazyobject.py
+ERROR django111/test_resolver.py
+ERROR django111/test_sanity_check.py
+ERROR i18n/test_controller.py
+ERROR i18n/test_gettext.py
+ERROR moinmoin/test_controller.py
+ERROR rss/test_feeds.py
+ERROR rss/test_shelve.py
+ERROR sql/test_controller.py
+ERROR sql/test_model.py
+ERROR utils/test_streamloggerbase.py
+ERROR utils/test_utils_collection2.py
+ERROR utils/test_utils_configparse.py
+ERROR utils/test_utils_cutandpaste.py
+ERROR utils/test_utils_fixture.py
+ERROR utils/test_utils_template.py
+ERROR utils/test_utils_urlmap.py
+ERROR webdav/test_controller.py
+ERROR wsgi/test_json.py
+ERROR wsgi/test_request.py
+ERROR wsgi/test_response.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 46 errors during collection !!!!!!!!!!!!!!!!!!!
+============================== 46 errors in 1.21s ==============================
