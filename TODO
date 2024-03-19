@@ -1,3 +1,5 @@
+- django-hotsauce 1.5.1 release on github 
+-> new features: experimental Django 5.x support!
 - more testing !! 
 - Python 3.9 and 3.11 support
 - Extend and complete GoogleController

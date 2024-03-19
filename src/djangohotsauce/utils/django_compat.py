@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-import re, logging
+import re
 from importlib import import_module
 from django.core.exceptions import ImproperlyConfigured, ViewDoesNotExist
 from django.utils.datastructures import MultiValueDict
-from django.utils.encoding import iri_to_uri, force_text, smart_str
+from django.utils.encoding import iri_to_uri, smart_str
 from django.utils.regex_helper import normalize
 from functools import wraps
 
@@ -12,10 +12,8 @@ try:
     from django.utils.lru_cache import lru_cache
     def memoize(func, cache, num_args):
         return lru_cache()(func)
-except ImportError:
-    from django.utils.functional import memoize
-
-log = logging.getLogger(__name__)
+except (ImportError,ModuleNotFoundError):
+    from functools import cache as memoize
 
 try:
     reversed
@@ -51,7 +49,7 @@ def get_callable(lookup_view, can_fail=True):
             pass
     return lookup_view
 
-get_callable = memoize(get_callable, _callable_cache, 1)
+get_callable = memoize(get_callable)
 
 def get_resolver(urlconf, settings=None):
     if urlconf is None:
@@ -60,7 +58,7 @@ def get_resolver(urlconf, settings=None):
             settings = LazySettings()
             urlconf = settings.ROOT_URLCONF
     return RegexURLResolver(r'^/', urlconf)
-get_resolver = memoize(get_resolver, _resolver_cache, 1)
+get_resolver = memoize(get_resolver)
 
 def get_mod_func(callback):
     # Converts 'django.views.news.stories.story_detail' to
@@ -100,7 +98,7 @@ class RegexURLPattern(object):
         self._callback_str = prefix + '.' + self._callback_str
 
     def resolve(self, path):
-        match = self.regex.search(force_text(path))
+        match = self.regex.search(str(path))
         if match:
             # If there are any named groups, use those as kwargs, ignoring
             # non-named groups. Otherwise, pass all non-named arguments as

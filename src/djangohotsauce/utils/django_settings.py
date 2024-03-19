@@ -74,15 +74,13 @@ class SettingsProxy(object):
         self._settings_cache.clear()
         return None
     
-    def initsettings(self, name=None):
+    def initsettings(self, name=None, fallback='local_settings'):
         self.destroysettings(name)
         if name is None:
-            self.modname = os.environ[getattr(self, '_settings_module_name')]
+            self.modname = os.environ[fallback]
         else:
             self.modname = name
-
-
-    settings = property(memoize(get_settings, _settings_cache, 1))
+    settings = property(memoize(get_settings))
     
 
 class LazySettings(SettingsProxy):

@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-hotsauce"
-version = "1.5"
+version = "1.5.1"
 authors = [
 	{name = "Etienne Robillard", email = "smart@open-neurosecurity.org"},
 ]
 description = "Scalable and heterogeneous web toolkit sitting on top of Django and others"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 keywords = ["django-hotsauce", "django", "wsgi", "framework"]
-license = {text = "Apache Version 2"}
+license = {text = "GPL version 3 or later"}
 classifiers = [
  "Development Status :: 5 - Production",
  "Framework :: Django",

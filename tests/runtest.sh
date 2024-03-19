@@ -7,4 +7,4 @@ then
  echo "PYTHON interpreter = $PYTHON"
  . /etc/djangorc
 fi
-pytest .
+pytest django5
