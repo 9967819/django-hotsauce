@@ -32,6 +32,7 @@ jobs:
         python -m pip install -e .
     - name: Run Tests
       run: |
+        source $HOME/.local/django_project/bin/activate
         sh tests/runtests.sh
         exit 0
 
