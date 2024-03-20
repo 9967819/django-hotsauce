@@ -34,7 +34,7 @@ jobs:
       run: |
         source $HOME/.local/django_project/bin/activate
         python -m pip install -e .
-        python -m pip -r requirements.txt
+        python -m pip install -r requirements.txt
         sh tests/runtests.sh
         exit 0
 
