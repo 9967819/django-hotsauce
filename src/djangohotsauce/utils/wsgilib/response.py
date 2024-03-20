@@ -5,10 +5,9 @@
 """
 import sys
 import socket, hashlib
-from djangohotsauce.utils.log import configure_logging
 from djangohotsauce.release import VERSION, RELEASE_NAME
 
-log = configure_logging(__name__)
+#log = configure_logging(__name__)
 PY3K = sys.version_info[0] == 3
 
 if PY3K:
@@ -16,7 +15,7 @@ if PY3K:
     from http.cookies import SimpleCookie
 else:
     import platform
-    log.debug("CPython (%s) WSGI 1.0 environment detected." % platform.python_implementation())
+    #log.debug("CPython (%s) WSGI 1.0 environment detected." % platform.python_implementation())
     from httplib import responses
     from Cookie import SimpleCookie
 
@@ -115,13 +114,13 @@ class BaseResponse(object):
             self.http_headers['ETag'] = self.etag
 
         if headers is not None:
-            if verbosity_level >= 2:
-                log.debug("Headers found!")
+            #if verbosity_level >= 2:
+            #    #log.debug("Headers found!")
             self.base_headers.extend(headers)
         
         self.http_headers = self.base_headers
-        if enable_cookies:
-            log.debug("warning: generic cookie support not implemented!")
+        #if enable_cookies:
+        #    log.debug("warning: generic cookie support not implemented!")
             
 
     def __str__(self, skip_body=False):
