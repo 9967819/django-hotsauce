@@ -8,8 +8,8 @@ from djangohotsauce.controllers.base import BaseController
 from djangohotsauce.utils.django_settings import LazySettings
 from djangohotsauce.utils.django_compat import get_resolver
 from djangohotsauce.utils.django_compat import NoReverseMatch
-from djangohotsauce.utils.log import configure_logging
-log = configure_logging(__name__)
+#from djangohotsauce.utils.log import configure_logging
+#log = configure_logging(__name__)
 from djangohotsauce.utils.wsgilib import (
     HTTPRequest, 
     HTTPResponse,
@@ -61,7 +61,7 @@ class WSGIController(BaseController):
         if enable_logging and logger:
             self.logger = logger
         else:    
-            self.logger = log
+            self.logger = None
         
         if settings is not None:
             self.settings = settings
