@@ -9,12 +9,14 @@ class SimpleController(WSGIController):
 
 class ControllerTestCase(unittest.TestCase):
 
-    def setUp():
+    def setUp(self):
 
         os.environ['DJANGO_SETTINGS_MODULE'] = 'local_settings'
-    def test_init_main():
+    
+    def test_init_main(self):
         
-        pass
+        wsgi_app = WSGIController()
+
 
 
 

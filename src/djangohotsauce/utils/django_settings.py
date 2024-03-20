@@ -34,10 +34,6 @@ class SettingsProxy(object):
         # ensure to initialize _settings_cache
         self._settings_cache.clear()
         self.initsettings(name=modname)
-        #if modname in sys.modules:
-        #    #print 'doing a coup..'
-        #    self._settings_cache[modname] = sys.modules[modname]
-
         # set autoload flag for django settings
         self.autoload = autoload
                
@@ -74,7 +70,7 @@ class SettingsProxy(object):
         self._settings_cache.clear()
         return None
     
-    def initsettings(self, name=None, fallback='local_settings'):
+    def initsettings(self, name=None, fallback='DJANGO_SETTINGS_MODULE'):
         self.destroysettings(name)
         if name is None:
             self.modname = os.environ[fallback]
