@@ -4,7 +4,8 @@
 
 """
 import sys
-import socket, hashlib
+import socket
+import hashlib
 from djangohotsauce.release import VERSION, RELEASE_NAME
 
 #log = configure_logging(__name__)

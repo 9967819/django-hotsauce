@@ -1,7 +1,17 @@
-Before running run.py, please do:
+Hacker guide:
 
+1. Create your venv the normal way for dev/testing:
+
+		% python -m venv /run/www/django_app
+		% source /run/www/django_app/bin/activate
+		% cp local_settings.py.sample /run/www/django_app/local_settings.py
+		% python -m pip install -e . 
+
+2. Before running tests/run.py, please do:
+
+		$ sudo mkdir /home/www/django_app
+		$ export ROOTDIR=/home/www/django_app 
     $ sudo cp djangorc.sample /etc/djangorc
-    $ sudo vi /etc/djangorc 
     $ sudo chmod 0640 /etc/djangorc
     $ source /etc/djangorc
 
@@ -23,3 +33,5 @@ To invoke a test script for a given collection:
 For command-line options and usage help run:
 
     $ python ./run.py --help
+
+Have fun hacking Django! :)

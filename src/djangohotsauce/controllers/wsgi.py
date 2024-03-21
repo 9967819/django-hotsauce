@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 from contextlib import contextmanager
 from werkzeug.local import Local, LocalManager
 from importlib import import_module
@@ -47,8 +48,8 @@ class WSGIController(BaseController):
     _request_class = HTTPRequest
     _response_class = HTTPResponse
 
-    def __init__(self, settings=None, enable_logging=True, 
-        autoload=True, debug=False, environ=None, logger=None,
+    def __init__(self, settings, enable_logging=False, 
+        autoload=True, debug=True, environ=None, logger=None,
         resolver=None):
         """
         Initializes a ``BaseController`` instance for processing
@@ -66,7 +67,7 @@ class WSGIController(BaseController):
         if settings is not None:
             self.settings = settings
         else:
-            self.settings = LazySettings()
+            self.settings = LazySettings(os.environ['DJANGO_SETTINGS_MODULE'])
 
         setattr(self, '_urlconf', self.settings.ROOT_URLCONF)
         if resolver is not None:

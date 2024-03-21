@@ -15,9 +15,8 @@ python_impl = platform.python_implementation()
 #from wsgiref import simple_server, validate
 
 from djangohotsauce.utils.log import configure_logging
-from djangohotsauce.utils.configparse import string_getter, int_getter
 from djangohotsauce.utils.wsgilib import translogger 
-from djangohotsauce.release import BASE_REVISION, RELEASE_NAME
+from djangohotsauce.release import VERSION
 from django.utils.termcolors import colorize as _colored
     
 from .reloader import install
@@ -40,7 +39,6 @@ class BannerBase(object):
     def __init__(self, fp=debug_msg_handler, bind_addr=('127.0.0.1', '8000'),
                  settings=None):
         self.bind_addr = bind_addr #TODO: use default_bind_addr
-        print(bind_addr)
         fmt = self.get_default_format(settings)
         self.start_time = time.strftime(fmt)
         self.server_uri = 'http://%s:%i/' % (bind_addr[0], int(bind_addr[1]))
@@ -71,8 +69,8 @@ class BannerBase(object):
         #colored("djangohotsauce %s "%(notmm.__version__)) 
         #colored("%s"%djangohotsauce.__copyright__)
         # XXX this part need more work ! :)
-        print("Django-hotsauce release %s (%s)" % (
-            BASE_REVISION, RELEASE_NAME
+        print("Django-hotsauce release %d.%d" % (
+            VERSION[0], VERSION[1]
             ))
         return self
 
@@ -84,11 +82,10 @@ class WSGIServerBase(object):
     
     serverClass = werkzeug.run_simple # wsgiref
     
-    def __init__(self, wsgi_app, bind_addr, debug=True):
+    def __init__(self, bind_addr, debug=True):
         """HTTPServer.__init__"""
         self.host = bind_addr[0]
         self.port = int(bind_addr[1])
-        self.wsgi_app = wsgi_app
         if debug:
             # run the wsgi app in using wsgiref validator
             # middleware
@@ -109,17 +106,6 @@ class WSGIServerBase(object):
             except SystemExit:
                 self.server.close()
                 sys.exit(0)
-
-def get_bind_addr(app_conf, section='httpserver', listen_port=8000):
-    """
-    Return a 2-element tuple containing the hostname and port
-    to listen for remote connections.
-    """
-
-    host = string_getter(app_conf, section, 'host') or urllib.localhost()
-    port = int_getter(app_conf, section, 'port') or listen_port
-
-    return (host, port)
 
 def daemonize(wsgi_app, bind_addr, logging=True, autoreload=True, 
     debug=True):

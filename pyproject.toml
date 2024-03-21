@@ -1,26 +1,33 @@
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
-[project]
-name = "django-hotsauce"
-version = "1.5.1"
-authors = [
-	{name = "Etienne Robillard", email = "smart@open-neurosecurity.org"},
-]
+[tool.poetry]
+name = "djangohotsauce"
+version = "1.5.2"
+authors = ["Etienne Robillard"]
 description = "Experimental web framework sitting on top of Django and others."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.8, <4"
 keywords = ["django-hotsauce", "django", "wsgi", "framework"]
-license = {text = "GPL version 3 or later"}
+license = "GPL version 3 or later"
 classifiers = [
  "Development Status :: 5 - Production",
+ "Environment :: Web Environment",
  "Framework :: Django",
- "Intended Audience :: Developers",
+ "Intended Audience :: Humans",
  "Operating System :: OS Independent",
  "Programming Language :: Python",
  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
  "Topic :: Internet :: WWW/HTTP :: WSGI :: Server"
 ]
 [project.scripts]
-httpserver = "tools.httpserver:main"
+httpserver = "djangohotsauce.http.httpserver:main"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+
+
+
